@@ -10,7 +10,7 @@ public class Second {
     @GetMapping
     public String a()
     {
-        return"sri";
+        return"vishnu";
     }
 }
 
