@@ -4,66 +4,67 @@ import com.Tancem.PIS.Service.JWTService;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
-import io.jsonwebtoken.security.Keys;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Service;
 
-import java.security.Key;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.Map;
-import java.util.function.Function;
-import java.util.logging.Logger;
 
 @Service
 public class JWTServiceImpl implements JWTService {
 
-    private static final Logger LOGGER = Logger.getLogger(JWTServiceImpl.class.getName());
-
-    private static final String SECRET_KEY = "7Hkz9PsRZJvS7QLos2ork/QmNkLh0zI+WNdKjUw8a1M=";
-    private final Key signingKey = Keys.hmacShaKeyFor(java.util.Base64.getDecoder().decode(SECRET_KEY));
-
-    @Override
-    public String generateToken(UserDetails userDetails) {
-        return Jwts.builder()
-                .setSubject(userDetails.getUsername())
-                .setIssuedAt(new Date(System.currentTimeMillis()))
-                .setExpiration(new Date(System.currentTimeMillis() + 1000 * 60 * 60 * 24)) // 24 hours
-                .signWith(signingKey, SignatureAlgorithm.HS256)
-                .compact();
-    }
-
-    @Override
-    public String generateRefreshToken(Map<String, Object> extractClaims, UserDetails userDetails) {
-        return Jwts.builder().setClaims(extractClaims)
-                .setSubject(userDetails.getUsername())
-                .setIssuedAt(new Date(System.currentTimeMillis()))
-                .setExpiration(new Date(System.currentTimeMillis() + 604800000)) // 7 days less this
-                .signWith(signingKey, SignatureAlgorithm.HS256)
-                .compact();
-    }
+    private final String SECRET_KEY = "secret";
 
     @Override
     public String extractUserName(String token) {
         return extractClaim(token, Claims::getSubject);
     }
 
-    private <T> T extractClaim(String token, Function<Claims, T> claimsResolver) {
-        final Claims claims = extractAllClaims(token);
-        return claimsResolver.apply(claims);
-    }
-
-    private Claims extractAllClaims(String token) {
-        return Jwts.parserBuilder()
-                .setSigningKey(signingKey)
-                .build()
-                .parseClaimsJws(token)
-                .getBody();
+    @Override
+    public String generateToken(Map<String, Object> claims, UserDetails userDetails) {
+        return Jwts.builder()
+                .setClaims(claims)
+                .setSubject(userDetails.getUsername())
+                .setIssuedAt(new Date(System.currentTimeMillis()))
+                .setExpiration(new Date(System.currentTimeMillis() + 1000 * 60 * 60 * 10))
+                .signWith(SignatureAlgorithm.HS256, SECRET_KEY)
+                .compact();
     }
 
     @Override
     public boolean validateToken(String token, UserDetails userDetails) {
         final String username = extractUserName(token);
         return (username.equals(userDetails.getUsername()) && !isTokenExpired(token));
+    }
+
+    @Override
+    public String generateRefreshToken(String token) {
+        Claims claims = extractAllClaims(token);
+        return Jwts.builder()
+                .setClaims(claims)
+                .setSubject(claims.getSubject())
+                .setIssuedAt(new Date(System.currentTimeMillis()))
+                .setExpiration(new Date(System.currentTimeMillis() + 1000 * 60 * 60 * 10))
+                .signWith(SignatureAlgorithm.HS256, SECRET_KEY)
+                .compact();
+    }
+
+    @Override
+    public boolean validateToken(String jwt) {
+        return false;
+    }
+
+    private <T> T extractClaim(String token, java.util.function.Function<Claims, T> claimsResolver) {
+        final Claims claims = extractAllClaims(token);
+        return claimsResolver.apply(claims);
+    }
+
+    private Claims extractAllClaims(String token) {
+        return Jwts.parser()
+                .setSigningKey(SECRET_KEY)
+                .parseClaimsJws(token)
+                .getBody();
     }
 
     private boolean isTokenExpired(String token) {

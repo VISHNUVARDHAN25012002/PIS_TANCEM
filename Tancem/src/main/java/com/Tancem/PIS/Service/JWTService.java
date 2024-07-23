@@ -5,9 +5,10 @@ import org.springframework.security.core.userdetails.UserDetails;
 import java.util.Map;
 
 public interface JWTService {
-    String extractUserName(String token);  // Ensure method name is correct
-    String generateToken(UserDetails userDetails);
+    String extractUserName(String token);
+    String generateToken(Map<String, Object> claims, UserDetails userDetails);
     boolean validateToken(String token, UserDetails userDetails);
+    String generateRefreshToken(String token);
 
-    public String generateRefreshToken(Map<String ,Object> extractClaims , UserDetails userDetails);
+    boolean validateToken(String jwt);
 }

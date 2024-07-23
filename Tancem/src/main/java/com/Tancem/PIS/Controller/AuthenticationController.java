@@ -1,10 +1,9 @@
 package com.Tancem.PIS.Controller;
 
-
 import com.Tancem.PIS.DAO.JwtAuthenticationResponse;
 import com.Tancem.PIS.DAO.RefreshTokenRequest;
 import com.Tancem.PIS.DAO.SigninRequest;
-import com.Tancem.PIS.Model.User;
+import com.Tancem.PIS.DAO.SignupRequest;
 import com.Tancem.PIS.Service.AuthenticationService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
@@ -20,8 +19,6 @@ public class AuthenticationController {
 
     private final AuthenticationService authenticationService;
 
-
-
     @PostMapping("/signin")
     public ResponseEntity<JwtAuthenticationResponse> signin(@RequestBody SigninRequest signinRequest) {
         return ResponseEntity.ok(authenticationService.signin(signinRequest));
@@ -30,5 +27,11 @@ public class AuthenticationController {
     @PostMapping("/refresh")
     public ResponseEntity<JwtAuthenticationResponse> refresh(@RequestBody RefreshTokenRequest refreshTokenRequest) {
         return ResponseEntity.ok(authenticationService.refreshToken(refreshTokenRequest));
+    }
+
+    @PostMapping("/signup")
+    public ResponseEntity<String> signup(@RequestBody SignupRequest signupRequest) {
+        authenticationService.signup(signupRequest);
+        return ResponseEntity.ok("User registered successfully!");
     }
 }

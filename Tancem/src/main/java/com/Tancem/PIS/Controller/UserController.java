@@ -11,6 +11,7 @@ public class UserController {
 
     @GetMapping
     public ResponseEntity<String> sayHello(){
+
         return ResponseEntity.ok("Hello user!");
     }
 }

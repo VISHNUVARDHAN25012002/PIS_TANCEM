@@ -4,45 +4,29 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e8f1467d-c639-44c6-b51d-35b161b7465e" name="Changes" comment="vichu">
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/Tancem/PIS/Controller/AdminController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/Tancem/PIS/Controller/AuthenticationController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/Tancem/PIS/Controller/UserController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/Tancem/PIS/DAO/JwtAuthenticationResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/Tancem/PIS/DAO/RefreshTokenRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/Tancem/PIS/DAO/SigninRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/Tancem/PIS/DAO/UserDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/Tancem/PIS/Model/User.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/Tancem/PIS/Repository/UserRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/Tancem/PIS/Service/AuthenticationService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/Tancem/PIS/Service/JWTService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/Tancem/PIS/Service/UserService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/Tancem/PIS/ServiceImp/AuthenticationServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/Tancem/PIS/ServiceImp/JWTServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/Tancem/PIS/ServiceImp/UserServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/Tancem/PIS/config/JWtAuthenticationFilter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/Tancem/PIS/config/JwtSecurityConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/Tancem/PIS/config/RequestResponseLoggingFilter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/Tancem/PIS/config/SecurityConfiguration.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+    <list default="true" id="e8f1467d-c639-44c6-b51d-35b161b7465e" name="Changes" comment="vichu Spring Security">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/Tancem/PIS/DAO/SignupRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/Tancem/PIS/config/PasswordEncoderDemo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/Tancem/PIS/config/SecurityConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/Tancem/PIS/Controller/Hello.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/Tancem/PIS/DAO/Second.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/Tancem/PIS/Exceptions/Third.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/Tancem/PIS/Model/Four.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/Tancem/PIS/Service/Five.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/Tancem/PIS/ServiceImp/Six.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/Tancem/PIS/Controller/AuthenticationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Tancem/PIS/Controller/AuthenticationController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/Tancem/PIS/Controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Tancem/PIS/Controller/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/Tancem/PIS/DAO/JwtAuthenticationResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Tancem/PIS/DAO/JwtAuthenticationResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/Tancem/PIS/DAO/SigninRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Tancem/PIS/DAO/SigninRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/Tancem/PIS/DAO/UserDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Tancem/PIS/DAO/UserDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/Tancem/PIS/Model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Tancem/PIS/Model/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/Tancem/PIS/Repository/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Tancem/PIS/Repository/UserRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/Tancem/PIS/Service/AuthenticationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Tancem/PIS/Service/AuthenticationService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/Tancem/PIS/Service/JWTService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Tancem/PIS/Service/JWTService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/Tancem/PIS/Service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Tancem/PIS/Service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/Tancem/PIS/ServiceImp/AuthenticationServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Tancem/PIS/ServiceImp/AuthenticationServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/Tancem/PIS/ServiceImp/JWTServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Tancem/PIS/ServiceImp/JWTServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/Tancem/PIS/ServiceImp/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Tancem/PIS/ServiceImp/UserServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/Tancem/PIS/config/JWtAuthenticationFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Tancem/PIS/config/JwtAuthenticationFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/Tancem/PIS/config/JwtSecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Tancem/PIS/config/JwtSecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/Tancem/PIS/config/SecurityConfiguration.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/Tancem/PIS/Controller/Hello.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/Tancem/PIS/DAO/Second.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/Tancem/PIS/Exceptions/Third.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/Tancem/PIS/Model/Four.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/Tancem/PIS/Service/Five.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/Tancem/PIS/ServiceImp/Six.class" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -85,6 +69,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Application.PasswordEncoderDemo.executor": "Run",
     "RequestMappingsPanelOrder0": "0",
     "RequestMappingsPanelOrder1": "1",
     "RequestMappingsPanelWidth0": "75",
@@ -107,7 +92,25 @@
     ]
   }
 }]]></component>
-  <component name="RunManager">
+  <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.Tancem.PIS.config" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Spring Boot.PisApplication">
+    <configuration name="PasswordEncoderDemo" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.Tancem.PIS.config.PasswordEncoderDemo" />
+      <module name="Tancem" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.Tancem.PIS.config.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="PisApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
       <module name="Tancem" />
@@ -116,6 +119,11 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.PasswordEncoderDemo" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
@@ -135,7 +143,7 @@
       <updated>1721635889187</updated>
       <workItem from="1721635890859" duration="187000" />
       <workItem from="1721643831262" duration="1000000" />
-      <workItem from="1721711058924" duration="11992000" />
+      <workItem from="1721711058924" duration="21267000" />
     </task>
     <task id="LOCAL-00001" summary="Del">
       <option name="closed" value="true" />
@@ -161,7 +169,15 @@
       <option name="project" value="LOCAL" />
       <updated>1721652762225</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="vichu Spring Security">
+      <option name="closed" value="true" />
+      <created>1721729786190</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1721729786190</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -171,6 +187,7 @@
     <MESSAGE value="admin controller" />
     <MESSAGE value="Del" />
     <MESSAGE value="vichu" />
-    <option name="LAST_COMMIT_MESSAGE" value="vichu" />
+    <MESSAGE value="vichu Spring Security" />
+    <option name="LAST_COMMIT_MESSAGE" value="vichu Spring Security" />
   </component>
 </project>
