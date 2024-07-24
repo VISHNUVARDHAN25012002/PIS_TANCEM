@@ -7,4 +7,15 @@ import lombok.Data;
 @AllArgsConstructor
 public class JwtAuthenticationResponse {
     private String token;
+    private int status;
+    private String message;
+    private String note;
+    private Data data;
+
+    @lombok.Data
+    @AllArgsConstructor
+    public static class Data {
+        private String empId;
+        private String role;
+    }
 }
