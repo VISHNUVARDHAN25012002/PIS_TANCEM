@@ -4,16 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e8f1467d-c639-44c6-b51d-35b161b7465e" name="Changes" comment="vichu Spring Security4">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/Tancem/PIS/Controller/AuthenticationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Tancem/PIS/Controller/AuthenticationController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/Tancem/PIS/Service/AuthenticationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Tancem/PIS/Service/AuthenticationService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/Tancem/PIS/Service/JWTService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Tancem/PIS/Service/JWTService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/Tancem/PIS/ServiceImp/AuthenticationServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Tancem/PIS/ServiceImp/AuthenticationServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/Tancem/PIS/ServiceImp/JWTServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Tancem/PIS/ServiceImp/JWTServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/Tancem/PIS/config/JwtAuthenticationFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Tancem/PIS/config/JwtAuthenticationFilter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/Tancem/PIS/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Tancem/PIS/config/SecurityConfig.java" afterDir="false" />
-    </list>
+    <list default="true" id="e8f1467d-c639-44c6-b51d-35b161b7465e" name="Changes" comment="Spring LogOut" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -148,7 +139,7 @@
       <workItem from="1721745550885" duration="3860000" />
       <workItem from="1721801092373" duration="13194000" />
       <workItem from="1721883440925" duration="6099000" />
-      <workItem from="1721975773290" duration="8480000" />
+      <workItem from="1721975773290" duration="8645000" />
     </task>
     <task id="LOCAL-00001" summary="Del">
       <option name="closed" value="true" />
@@ -214,7 +205,23 @@
       <option name="project" value="LOCAL" />
       <updated>1721818406699</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Spring LogOut">
+      <option name="closed" value="true" />
+      <created>1721992509563</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1721992509563</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Spring LogOut">
+      <option name="closed" value="true" />
+      <created>1721992527552</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1721992527552</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -228,6 +235,7 @@
     <MESSAGE value="vichu Spring Security2" />
     <MESSAGE value="vichu Spring Security3" />
     <MESSAGE value="vichu Spring Security4" />
-    <option name="LAST_COMMIT_MESSAGE" value="vichu Spring Security4" />
+    <MESSAGE value="Spring LogOut" />
+    <option name="LAST_COMMIT_MESSAGE" value="Spring LogOut" />
   </component>
 </project>
