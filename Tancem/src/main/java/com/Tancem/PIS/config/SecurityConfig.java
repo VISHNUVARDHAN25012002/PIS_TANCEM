@@ -1,7 +1,7 @@
 package com.Tancem.PIS.config;
 
-import com.Tancem.PIS.ServiceImp.UserServiceImpl;
 import com.Tancem.PIS.Service.JWTService;
+import com.Tancem.PIS.ServiceImp.UserServiceImpl;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -39,7 +39,7 @@ public class SecurityConfig {
 
     @Bean
     public JwtAuthenticationFilter jwtAuthenticationFilter() {
-        return new JwtAuthenticationFilter(jwtService, userServiceImpl);
+        return new JwtAuthenticationFilter();
     }
 
     @Bean

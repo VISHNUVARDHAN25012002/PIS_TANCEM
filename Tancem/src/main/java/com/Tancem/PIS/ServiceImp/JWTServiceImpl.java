@@ -12,11 +12,14 @@ import javax.crypto.SecretKey;
 import java.util.Base64;
 import java.util.Date;
 import java.util.Map;
+import java.util.Set;
+import java.util.concurrent.ConcurrentHashMap;
 
 @Service
 public class JWTServiceImpl implements JWTService {
 
     private final SecretKey secretKey;
+    private final Set<String> invalidatedTokens = ConcurrentHashMap.newKeySet();  // In-memory storage for invalidated tokens
 
     public JWTServiceImpl() {
         String secret = "4u6AMFK6oeg/XxDYWsu7rj1FVxNpON8oh6KH4TzN06I=";  // Replace this with your actual key
@@ -54,17 +57,22 @@ public class JWTServiceImpl implements JWTService {
     @Override
     public boolean validateToken(String token, UserDetails userDetails) {
         final String username = extractUserName(token);
-        return (username.equals(userDetails.getUsername()) && !isTokenExpired(token));
+        return (username.equals(userDetails.getUsername()) && !isTokenExpired(token) && !invalidatedTokens.contains(token));
     }
 
     @Override
     public boolean validateToken(String token) {
         try {
             Jwts.parserBuilder().setSigningKey(secretKey).build().parseClaimsJws(token);
-            return true;
+            return !invalidatedTokens.contains(token);  // Check if the token is in the invalidated set
         } catch (Exception e) {
             return false;
         }
+    }
+
+    @Override
+    public void invalidateToken(String token) {
+        invalidatedTokens.add(token);
     }
 
     private Claims extractAllClaims(String token) {
