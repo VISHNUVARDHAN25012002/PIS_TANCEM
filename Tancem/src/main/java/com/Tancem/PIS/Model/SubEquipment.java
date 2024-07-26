@@ -1,5 +1,6 @@
 package com.Tancem.PIS.Model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 
 import java.time.LocalDateTime;
@@ -22,6 +23,7 @@ public class SubEquipment {
 
     @ManyToOne
     @JoinColumn(name = "equipment_id", nullable = false)
+    //@JsonBackReference
     private Equipment equipment;
 
 

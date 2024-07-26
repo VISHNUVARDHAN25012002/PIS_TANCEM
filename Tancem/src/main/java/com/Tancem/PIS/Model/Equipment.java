@@ -1,25 +1,22 @@
 package com.Tancem.PIS.Model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
-
 import java.time.LocalDateTime;
 import java.util.HashSet;
 import java.util.Set;
 
 @Entity
-//@Table(name = "equipment")
 public class Equipment {
 
     @Id
-    private int id;
 
-   // @Column(name = "equipment_description", nullable = false, length = 100)
+    private Integer id;
+
     private String equipment_Description;
 
-    //@Column(name = "created_at", updatable = false)
     private LocalDateTime created_At;
 
-   // @Column(name = "updated_at")
     private LocalDateTime updated_At;
 
     @PrePersist
@@ -35,10 +32,11 @@ public class Equipment {
 
     @ManyToOne
     @JoinColumn(name = "equipment_group_id", nullable = false)
+    @JsonBackReference
     private EquipmentGroup equipmentGroup;
 
-    @OneToMany(mappedBy = "equipment", cascade = CascadeType.ALL)
-    private Set<SubEquipment> subEquipments;
+    @OneToMany(mappedBy = "equipment", cascade = CascadeType.ALL, orphanRemoval = true)
+    private Set<SubEquipment> subEquipments = new HashSet<>();
 
     // Getters and Setters
 
@@ -72,5 +70,21 @@ public class Equipment {
 
     public void setUpdatedAt(LocalDateTime updatedAt) {
         this.updated_At = updatedAt;
+    }
+
+    public EquipmentGroup getEquipmentGroup() {
+        return equipmentGroup;
+    }
+
+    public void setEquipmentGroup(EquipmentGroup equipmentGroup) {
+        this.equipmentGroup = equipmentGroup;
+    }
+
+    public Set<SubEquipment> getSubEquipments() {
+        return subEquipments;
+    }
+
+    public void setSubEquipments(Set<SubEquipment> subEquipments) {
+        this.subEquipments = subEquipments;
     }
 }

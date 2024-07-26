@@ -7,7 +7,9 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 @RestController
 @RequestMapping("/tancem/pis/sub_equipment")
@@ -17,26 +19,41 @@ public class SubEquipmentController {
     private SubEquipmentService subEquipmentService;
 
     @GetMapping("/readall")
-    public ResponseEntity<List<SubEquipment>> getAllSubEquipments() {
+    public ResponseEntity<Map<String, Object>> getAllSubEquipments() {
         List<SubEquipment> subEquipments = subEquipmentService.getAllSubEquipments();
-        return new ResponseEntity<>(subEquipments, HttpStatus.OK);
+        Map<String, Object> response = new HashMap<>();
+        response.put("statusCode", HttpStatus.OK.value());
+        response.put("statusMessage", "Success");
+        response.put("data", subEquipments);
+        return new ResponseEntity<>(response, HttpStatus.OK);
     }
 
     @GetMapping("/read/{id}")
-    public ResponseEntity<SubEquipment> getSubEquipmentById(@PathVariable Integer id) {
+    public ResponseEntity<Map<String, Object>> getSubEquipmentById(@PathVariable Integer id) {
         SubEquipment subEquipment = subEquipmentService.getSubEquipmentById(id);
-        return new ResponseEntity<>(subEquipment, HttpStatus.OK);
+        Map<String, Object> response = new HashMap<>();
+        response.put("statusCode", HttpStatus.OK.value());
+        response.put("statusMessage", "Success");
+        response.put("data", subEquipment);
+        return new ResponseEntity<>(response, HttpStatus.OK);
     }
 
     @PostMapping("/create")
-    public ResponseEntity<SubEquipment> createSubEquipment(@RequestBody SubEquipment subEquipment) {
+    public ResponseEntity<Map<String, Object>> createSubEquipment(@RequestBody SubEquipment subEquipment) {
         SubEquipment newSubEquipment = subEquipmentService.saveSubEquipment(subEquipment);
-        return new ResponseEntity<>(newSubEquipment, HttpStatus.CREATED);
+        Map<String, Object> response = new HashMap<>();
+        response.put("statusCode", HttpStatus.CREATED.value());
+        response.put("statusMessage", "Created");
+        response.put("data", newSubEquipment);
+        return new ResponseEntity<>(response, HttpStatus.CREATED);
     }
 
     @DeleteMapping("/delete/{id}")
-    public ResponseEntity<Void> deleteSubEquipment(@PathVariable Integer id) {
+    public ResponseEntity<Map<String, Object>> deleteSubEquipment(@PathVariable Integer id) {
         subEquipmentService.deleteSubEquipment(id);
-        return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+        Map<String, Object> response = new HashMap<>();
+        response.put("statusCode", HttpStatus.NO_CONTENT.value());
+        response.put("statusMessage", "Deleted");
+        return new ResponseEntity<>(response, HttpStatus.NO_CONTENT);
     }
 }

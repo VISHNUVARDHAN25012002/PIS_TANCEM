@@ -1,5 +1,6 @@
 package com.Tancem.PIS.Model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 
 @Entity
@@ -15,6 +16,7 @@ public class Problem {
 
         @ManyToOne
         @JoinColumn(name = "plant_department_id", nullable = false)
+       // @JsonBackReference
         private PlantDepartment plantDepartment;
 
     // Getters and Setters

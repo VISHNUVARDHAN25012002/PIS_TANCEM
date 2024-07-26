@@ -7,7 +7,9 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 @RestController
 @RequestMapping("/tancem/pis/problem")
@@ -17,26 +19,41 @@ public class ProblemController {
     private ProblemService problemService;
 
     @GetMapping("/readall")
-    public ResponseEntity<List<Problem>> getAllProblems() {
+    public ResponseEntity<Map<String, Object>> getAllProblems() {
         List<Problem> problems = problemService.getAllProblems();
-        return new ResponseEntity<>(problems, HttpStatus.OK);
+        Map<String, Object> response = new HashMap<>();
+        response.put("statusCode", HttpStatus.OK.value());
+        response.put("statusMessage", "Success");
+        response.put("data", problems);
+        return new ResponseEntity<>(response, HttpStatus.OK);
     }
 
     @GetMapping("/read/{id}")
-    public ResponseEntity<Problem> getProblemById(@PathVariable Integer id) {
+    public ResponseEntity<Map<String, Object>> getProblemById(@PathVariable Integer id) {
         Problem problem = problemService.getProblemById(id);
-        return new ResponseEntity<>(problem, HttpStatus.OK);
+        Map<String, Object> response = new HashMap<>();
+        response.put("statusCode", HttpStatus.OK.value());
+        response.put("statusMessage", "Success");
+        response.put("data", problem);
+        return new ResponseEntity<>(response, HttpStatus.OK);
     }
 
     @PostMapping("/create")
-    public ResponseEntity<Problem> createProblem(@RequestBody Problem problem) {
+    public ResponseEntity<Map<String, Object>> createProblem(@RequestBody Problem problem) {
         Problem newProblem = problemService.saveProblem(problem);
-        return new ResponseEntity<>(newProblem, HttpStatus.CREATED);
+        Map<String, Object> response = new HashMap<>();
+        response.put("statusCode", HttpStatus.CREATED.value());
+        response.put("statusMessage", "Created");
+        response.put("data", newProblem);
+        return new ResponseEntity<>(response, HttpStatus.CREATED);
     }
 
     @DeleteMapping("/delete/{id}")
-    public ResponseEntity<Void> deleteProblem(@PathVariable Integer id) {
+    public ResponseEntity<Map<String, Object>> deleteProblem(@PathVariable Integer id) {
         problemService.deleteProblem(id);
-        return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+        Map<String, Object> response = new HashMap<>();
+        response.put("statusCode", HttpStatus.NO_CONTENT.value());
+        response.put("statusMessage", "Deleted");
+        return new ResponseEntity<>(response, HttpStatus.NO_CONTENT);
     }
 }

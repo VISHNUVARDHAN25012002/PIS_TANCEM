@@ -1,5 +1,6 @@
 package com.Tancem.PIS.Model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 
 import java.time.LocalDateTime;
@@ -32,6 +33,7 @@ public class PlantDepartment {
     }
 
     @OneToMany(mappedBy = "plantDepartment", cascade = CascadeType.ALL)
+   // @JsonBackReference
     private Set<Problem> problems;
 
     // Getters and Setters
