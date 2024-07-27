@@ -24,19 +24,35 @@ public class PlantDepartment {
 
     @PrePersist
     protected void onCreate() {
+        updated_At = LocalDateTime.now();
         created_At = LocalDateTime.now();
     }
 
     @PreUpdate
     protected void onUpdate() {
+        created_At = LocalDateTime.now();
         updated_At = LocalDateTime.now();
     }
 
     @OneToMany(mappedBy = "plantDepartment", cascade = CascadeType.ALL)
-   // @JsonBackReference
+    @JsonBackReference
     private Set<Problem> problems;
 
     // Getters and Setters
+
+    public PlantDepartment() {}
+
+    public PlantDepartment(int id, String plant_Department_Description, LocalDateTime created_At, LocalDateTime updated_At, Set<Problem> problems) {
+        this.id = id;
+        this.plant_Department_Description = plant_Department_Description;
+        this.created_At = created_At;
+        this.updated_At = updated_At;
+        this.problems = problems;
+    }
+
+    public PlantDepartment(String plant_Department_Description) {
+
+    }
 
     public Integer getId() {
         return id;
@@ -69,5 +85,14 @@ public class PlantDepartment {
     public void setUpdatedAt(LocalDateTime updatedAt) {
         this.updated_At = updatedAt;
     }
+
+    public Set<Problem> getProblems() {
+        return problems;
+    }
+
+    public void setProblems(Set<Problem> problems) {
+        this.problems = problems;
+    }
 }
+
 

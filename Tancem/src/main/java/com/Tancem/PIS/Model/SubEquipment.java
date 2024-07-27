@@ -23,7 +23,7 @@ public class SubEquipment {
 
     @ManyToOne
     @JoinColumn(name = "equipment_id", nullable = false)
-    //@JsonBackReference
+    @JsonBackReference
     private Equipment equipment;
 
 
@@ -36,6 +36,17 @@ public class SubEquipment {
     @PreUpdate
     protected void onUpdate() {
         updated_At = LocalDateTime.now();
+        created_At = LocalDateTime.now();
+    }
+
+    public SubEquipment() {}
+
+    public SubEquipment(int id, String sub_Equipment_Description, LocalDateTime created_At, LocalDateTime updated_At, Equipment equipment) {
+        this.id = id;
+        this.sub_Equipment_Description = sub_Equipment_Description;
+        this.created_At = created_At;
+        this.updated_At = updated_At;
+        this.equipment = equipment;
     }
 
     // Getters and Setters
@@ -70,6 +81,14 @@ public class SubEquipment {
 
     public void setUpdatedAt(LocalDateTime updatedAt) {
         this.updated_At = updatedAt;
+    }
+
+    public Equipment getEquipment() {
+        return equipment;
+    }
+
+    public void setEquipment(Equipment equipment) {
+        this.equipment = equipment;
     }
 }
 

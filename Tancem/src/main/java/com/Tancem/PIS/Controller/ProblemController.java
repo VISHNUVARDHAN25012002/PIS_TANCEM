@@ -43,17 +43,41 @@ public class ProblemController {
         Problem newProblem = problemService.saveProblem(problem);
         Map<String, Object> response = new HashMap<>();
         response.put("statusCode", HttpStatus.CREATED.value());
-        response.put("statusMessage", "Created");
+        response.put("statusMessage", "Problem successfully created");
         response.put("data", newProblem);
         return new ResponseEntity<>(response, HttpStatus.CREATED);
     }
 
+    @PutMapping("/update/{id}")
+    public ResponseEntity<Map<String, Object>> updateProblem(@PathVariable Integer id, @RequestBody Problem problem) {
+        Problem existingProblem = problemService.getProblemById(id);
+        Map<String, Object> response = new HashMap<>();
+        if (existingProblem != null) {
+            problem.setId(id); // Ensure the ID is set for the update
+            Problem updatedProblem = problemService.saveProblem(problem);
+            response.put("statusCode", HttpStatus.OK.value());
+            response.put("statusMessage", "Problem successfully updated");
+            response.put("data", updatedProblem);
+            return new ResponseEntity<>(response, HttpStatus.OK);
+        } else {
+            response.put("statusCode", HttpStatus.NOT_FOUND.value());
+            response.put("statusMessage", "Problem not found");
+            return new ResponseEntity<>(response, HttpStatus.NOT_FOUND);
+        }
+    }
+
     @DeleteMapping("/delete/{id}")
     public ResponseEntity<Map<String, Object>> deleteProblem(@PathVariable Integer id) {
-        problemService.deleteProblem(id);
         Map<String, Object> response = new HashMap<>();
-        response.put("statusCode", HttpStatus.NO_CONTENT.value());
-        response.put("statusMessage", "Deleted");
-        return new ResponseEntity<>(response, HttpStatus.NO_CONTENT);
+        if (problemService.getProblemById(id) != null) {
+            problemService.deleteProblem(id);
+            response.put("statusCode", HttpStatus.NO_CONTENT.value());
+            response.put("statusMessage", "Problem successfully deleted");
+            return new ResponseEntity<>(response, HttpStatus.NO_CONTENT);
+        } else {
+            response.put("statusCode", HttpStatus.NOT_FOUND.value());
+            response.put("statusMessage", "Problem not found");
+            return new ResponseEntity<>(response, HttpStatus.NOT_FOUND);
+        }
     }
 }

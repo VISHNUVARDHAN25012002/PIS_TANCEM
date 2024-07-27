@@ -28,6 +28,7 @@ public class Equipment {
     @PreUpdate
     protected void onUpdate() {
         updated_At = LocalDateTime.now();
+        created_At = LocalDateTime.now();
     }
 
     @ManyToOne
@@ -39,6 +40,22 @@ public class Equipment {
     private Set<SubEquipment> subEquipments = new HashSet<>();
 
     // Getters and Setters
+
+    public Equipment() {}
+
+    public Equipment(Integer id, String equipment_Description, LocalDateTime created_At, LocalDateTime updated_At, EquipmentGroup equipmentGroup, Set<SubEquipment> subEquipments) {
+        this.id = id;
+        this.equipment_Description = equipment_Description;
+        this.created_At = created_At;
+        this.updated_At = updated_At;
+        this.equipmentGroup = equipmentGroup;
+        this.subEquipments = subEquipments;
+    }
+
+    public Equipment(Integer id, String equipment_Description, LocalDateTime created_At, LocalDateTime updated_At) {
+
+    }
+
 
     public Integer getId() {
         return id;

@@ -55,6 +55,23 @@ public class PlantDepartmentController {
         return new ResponseEntity<>(response, HttpStatus.CREATED);
     }
 
+    @PutMapping("/update/{id}")
+    public ResponseEntity<Map<String, Object>> updatePlantDepartment(@PathVariable Integer id, @RequestBody PlantDepartment plantDepartment) {
+        Map<String, Object> response = new HashMap<>();
+        if (plantDepartmentService.getPlantDepartmentById(id) != null) {
+            plantDepartment.setId(id);
+            PlantDepartment updatedPlantDepartment = plantDepartmentService.savePlantDepartment(plantDepartment);
+            response.put("statusCode", HttpStatus.OK.value());
+            response.put("statusMessage", "Plant department successfully updated");
+            response.put("data", updatedPlantDepartment);
+            return new ResponseEntity<>(response, HttpStatus.OK);
+        } else {
+            response.put("statusCode", HttpStatus.NOT_FOUND.value());
+            response.put("statusMessage", "Plant department not found");
+            return new ResponseEntity<>(response, HttpStatus.NOT_FOUND);
+        }
+    }
+
     @DeleteMapping("/delete/{id}")
     public ResponseEntity<Map<String, Object>> deletePlantDepartment(@PathVariable Integer id) {
         Map<String, Object> response = new HashMap<>();

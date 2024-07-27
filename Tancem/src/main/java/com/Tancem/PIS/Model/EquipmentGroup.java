@@ -27,11 +27,22 @@ public class EquipmentGroup {
     @PreUpdate
     protected void onUpdate() {
         updated_At = LocalDateTime.now();
+        created_At = LocalDateTime.now();
     }
 
     @OneToMany(mappedBy = "equipmentGroup", cascade = CascadeType.ALL, orphanRemoval = true)
     @JsonBackReference
     private Set<Equipment> equipmentSet = new HashSet<>();
+
+    public EquipmentGroup(){}
+
+    public EquipmentGroup(Integer id, String equipment_Group, LocalDateTime created_At, LocalDateTime updated_At, Set<Equipment> equipmentSet) {
+        this.id = id;
+        this.equipment_Group = equipment_Group;
+        this.created_At = created_At;
+        this.updated_At = updated_At;
+        this.equipmentSet = equipmentSet;
+    }
 
     // Getters and Setters
 

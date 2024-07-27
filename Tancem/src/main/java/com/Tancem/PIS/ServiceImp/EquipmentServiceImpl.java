@@ -3,6 +3,7 @@ package com.Tancem.PIS.ServiceImp;
 import com.Tancem.PIS.DAO.EquipmentRepository;
 import com.Tancem.PIS.Model.Equipment;
 import com.Tancem.PIS.Service.EquipmentService;
+import jakarta.persistence.EntityNotFoundException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -45,6 +46,10 @@ public class EquipmentServiceImpl implements EquipmentService {
     @Override
     public void deleteEquipment(Integer id) {
         logger.info("Deleting equipment with id: {}", id);
-        equipmentRepository.deleteById(id);
+        if (equipmentRepository.existsById(id)) {
+            equipmentRepository.deleteById(id);
+        } else {
+            throw new EntityNotFoundException("Equipment not found with id: " + id);
+        }
     }
 }
