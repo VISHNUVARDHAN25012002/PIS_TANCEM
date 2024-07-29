@@ -4,11 +4,21 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e8f1467d-c639-44c6-b51d-35b161b7465e" name="Changes" comment="Spring LogOut">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/Tancem/PIS/config/Hello.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+    <list default="true" id="e8f1467d-c639-44c6-b51d-35b161b7465e" name="Changes" comment="test file">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/Tancem/PIS/Controller/AnalysisController/AnalysisController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/Tancem/PIS/Controller/AnalysisController/LabAnalysisController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/Tancem/PIS/Model/AnalysisModel/Analysis.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/Tancem/PIS/Model/AnalysisModel/LabAnalysis.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/Tancem/PIS/Repository/AnalysisRepository/AnalysisRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/Tancem/PIS/Repository/AnalysisRepository/LabAnalysisRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/Tancem/PIS/Service/AnalysisService/AnalysisService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/Tancem/PIS/Service/AnalysisService/LabAnalysisService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/Tancem/PIS/ServiceImp/AnalysisServiceImpl/AnalysisServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/Tancem/PIS/ServiceImp/AnalysisServiceImpl/LabAnalysisServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/Tancem/PIS/DAO/UserDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Tancem/PIS/DAO/UserDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/Tancem/PIS/config/JwtAuthenticationFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Tancem/PIS/config/JwtAuthenticationFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/Tancem/PIS/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Tancem/PIS/config/SecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/Tancem/PIS/config/SecurityConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/Tancem/PIS/config/SecurityConfig.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -145,7 +155,7 @@
       <workItem from="1721801092373" duration="13194000" />
       <workItem from="1721883440925" duration="6099000" />
       <workItem from="1721975773290" duration="9681000" />
-      <workItem from="1722064104732" duration="2087000" />
+      <workItem from="1722064104732" duration="8504000" />
     </task>
     <task id="LOCAL-00001" summary="Del">
       <option name="closed" value="true" />
@@ -235,7 +245,15 @@
       <option name="project" value="LOCAL" />
       <updated>1721993162514</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="test file">
+      <option name="closed" value="true" />
+      <created>1722242502777</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1722242502777</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -250,6 +268,7 @@
     <MESSAGE value="vichu Spring Security3" />
     <MESSAGE value="vichu Spring Security4" />
     <MESSAGE value="Spring LogOut" />
-    <option name="LAST_COMMIT_MESSAGE" value="Spring LogOut" />
+    <MESSAGE value="test file" />
+    <option name="LAST_COMMIT_MESSAGE" value="test file" />
   </component>
 </project>
