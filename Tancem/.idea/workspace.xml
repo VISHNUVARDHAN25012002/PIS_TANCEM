@@ -4,8 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e8f1467d-c639-44c6-b51d-35b161b7465e" name="Changes" comment="vichu">
-      <change beforePath="$PROJECT_DIR$/target/classes/com/Tancem/PIS/DAO/Second.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/Tancem/PIS/DAO/Second.class" afterDir="false" />
+    <list default="true" id="e8f1467d-c639-44c6-b51d-35b161b7465e" name="Changes" comment="admin controller">
+      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/Tancem/Admincontroller/Test.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/Tancem/Admincontroller/Test2.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/Tancem/PisApplication.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/misc.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,7 +40,7 @@
   <component name="GithubPullRequestsUISettings">{
   &quot;selectedUrlAndAccountId&quot;: {
     &quot;url&quot;: &quot;https://github.com/VISHNUVARDHAN25012002/PIS_TANCEM.git&quot;,
-    &quot;accountId&quot;: &quot;45636610-2eac-426b-944d-267c47c1903c&quot;
+    &quot;accountId&quot;: &quot;2a76a332-b4d3-45ed-bfa0-16188744ea0d&quot;
   }
 }</component>
   <component name="ProjectColorInfo">{
@@ -47,16 +56,9 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "Spring Boot.PisApplication.executor": "Run",
-    "git-widget-placeholder": "#6 on main",
+    "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
-    "node.js.detected.package.eslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
     "vue.rearranger.settings.migration": "true"
@@ -66,7 +68,7 @@
     <configuration name="PisApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
       <module name="Tancem" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="com.Tancem.PIS.PisApplication" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.Tancem.PisApplication" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -89,25 +91,7 @@
       <option name="presentableId" value="Default" />
       <updated>1721635889187</updated>
       <workItem from="1721635890859" duration="187000" />
-      <workItem from="1721643831262" duration="1000000" />
     </task>
-    <task id="LOCAL-00001" summary="Del">
-      <option name="closed" value="true" />
-      <created>1721652283937</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1721652283937</updated>
-    </task>
-    <task id="LOCAL-00002" summary="vichu">
-      <option name="closed" value="true" />
-      <created>1721652424275</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1721652424275</updated>
-    </task>
-    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -115,8 +99,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="admin controller" />
-    <MESSAGE value="Del" />
-    <MESSAGE value="vichu" />
-    <option name="LAST_COMMIT_MESSAGE" value="vichu" />
+    <option name="LAST_COMMIT_MESSAGE" value="admin controller" />
   </component>
 </project>
