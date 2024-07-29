@@ -4,21 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e8f1467d-c639-44c6-b51d-35b161b7465e" name="Changes" comment="vichu Spring Security3">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/Tancem/PIS/config/GenerateSecretKey.java" afterDir="false" />
+    <list default="true" id="e8f1467d-c639-44c6-b51d-35b161b7465e" name="Changes" comment="Guptha spring security">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/Tancem/PIS/Controller/Material/Material.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/Tancem/PIS/Model/Material/Material.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/Tancem/PIS/Model/Material/Material_Status.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/Tancem/PIS/Model/Material/Material_Type.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/Tancem/PIS/Model/Material/Source.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/Tancem/PIS/Repository/MaterialRepository/MaterialRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/Tancem/PIS/Repository/MaterialRepository/Material_Status.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/Tancem/PIS/Repository/MaterialRepository/Material_Type_Repository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/Tancem/PIS/Repository/MaterialRepository/SourceRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/Tancem/PIS/Controller/AuthenticationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Tancem/PIS/Controller/AuthenticationController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/Tancem/PIS/DAO/JwtAuthenticationResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Tancem/PIS/DAO/JwtAuthenticationResponse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/Tancem/PIS/Model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Tancem/PIS/Model/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/Tancem/PIS/Service/AuthenticationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Tancem/PIS/Service/AuthenticationService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/Tancem/PIS/ServiceImp/AuthenticationServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Tancem/PIS/ServiceImp/AuthenticationServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/Tancem/PIS/ServiceImp/JWTServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Tancem/PIS/ServiceImp/JWTServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/Tancem/PIS/ServiceImp/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Tancem/PIS/ServiceImp/UserServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/Tancem/PIS/config/JwtAuthenticationFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Tancem/PIS/config/JwtAuthenticationFilter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/Tancem/PIS/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Tancem/PIS/config/SecurityConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/Tancem/PIS/ServiceImp/JWTServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/Tancem/PIS/ServiceImp/JWTServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/Tancem/PIS/config/JwtAuthenticationFilter.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/Tancem/PIS/config/JwtAuthenticationFilter.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/Tancem/PIS/config/SecurityConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/Tancem/PIS/config/SecurityConfig.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,12 +24,17 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Interface" />
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$/.." value="sriguptha" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
@@ -73,6 +74,7 @@
     "git-widget-placeholder": "main",
     "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/Guptha/IdeaProjects/PIS_TANCEM/Tancem/src",
     "node.js.detected.package.eslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
@@ -127,6 +129,8 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.PasswordEncoderDemo" />
+        <item itemvalue="Application.GenerateSecretKey" />
         <item itemvalue="Application.GenerateSecretKey" />
         <item itemvalue="Application.PasswordEncoderDemo" />
       </list>
@@ -202,7 +206,31 @@
       <option name="project" value="LOCAL" />
       <updated>1721749656299</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Guptha spring security">
+      <option name="closed" value="true" />
+      <created>1721976242522</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1721976242526</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Guptha spring security">
+      <option name="closed" value="true" />
+      <created>1721976433781</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1721976433781</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Guptha spring security">
+      <option name="closed" value="true" />
+      <created>1721977764522</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1721977764524</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -215,6 +243,7 @@
     <MESSAGE value="vichu Spring Security" />
     <MESSAGE value="vichu Spring Security2" />
     <MESSAGE value="vichu Spring Security3" />
-    <option name="LAST_COMMIT_MESSAGE" value="vichu Spring Security3" />
+    <MESSAGE value="Guptha spring security" />
+    <option name="LAST_COMMIT_MESSAGE" value="Guptha spring security" />
   </component>
 </project>

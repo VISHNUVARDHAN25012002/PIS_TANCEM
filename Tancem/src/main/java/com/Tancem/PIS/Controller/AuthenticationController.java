@@ -47,7 +47,6 @@ public class AuthenticationController {
         data.put("createdAt", registeredUser.getCreatedAt().format(DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss")));
         data.put("createdBy", registeredUser.getCreatedBy());
         response.put("data", data);
-
         return ResponseEntity.ok(response);
     }
 }
