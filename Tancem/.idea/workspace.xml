@@ -4,18 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e8f1467d-c639-44c6-b51d-35b161b7465e" name="Changes" comment="Guptha spring security">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/Tancem/PIS/Controller/Material/Material.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/Tancem/PIS/Model/Material/Material.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/Tancem/PIS/Model/Material/Material_Status.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/Tancem/PIS/Model/Material/Material_Type.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/Tancem/PIS/Model/Material/Source.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/Tancem/PIS/Repository/MaterialRepository/MaterialRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/Tancem/PIS/Repository/MaterialRepository/Material_Status.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/Tancem/PIS/Repository/MaterialRepository/Material_Type_Repository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/Tancem/PIS/Repository/MaterialRepository/SourceRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="e8f1467d-c639-44c6-b51d-35b161b7465e" name="Changes" comment="Guptha spring security" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -230,7 +219,15 @@
       <option name="project" value="LOCAL" />
       <updated>1721977764524</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Guptha spring security">
+      <option name="closed" value="true" />
+      <created>1722230602971</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1722230602972</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
