@@ -47,8 +47,6 @@
 	<lib name="Maven: com.vaadin.external.google:android-json:0.0.20131108.vaadin1" scope="TEST"/>
 	<lib name="Maven: org.springframework:spring-test:6.1.11" scope="TEST"/>
 	<lib name="Maven: org.xmlunit:xmlunit-core:2.9.1" scope="TEST"/>
-	<lib name="Maven: io.jsonwebtoken:jjwt-impl:0.11.5" scope="RUNTIME"/>
-	<lib name="Maven: io.jsonwebtoken:jjwt-jackson:0.11.5" scope="RUNTIME"/>
 	<levels>
 		<level name="Maven: org.springframework.boot:spring-boot-starter-data-jdbc:3.3.2" value="project"/>
 		<level name="Maven: org.springframework.boot:spring-boot-starter-jdbc:3.3.2" value="project"/>
@@ -89,7 +87,6 @@
 		<level name="Maven: ch.qos.logback:logback-classic:1.5.6" value="project"/>
 		<level name="Maven: ch.qos.logback:logback-core:1.5.6" value="project"/>
 		<level name="Maven: org.apache.logging.log4j:log4j-to-slf4j:2.23.1" value="project"/>
-		<level name="Maven: org.apache.logging.log4j:log4j-api:2.23.1" value="project"/>
 		<level name="Maven: org.slf4j:jul-to-slf4j:2.0.13" value="project"/>
 		<level name="Maven: org.yaml:snakeyaml:2.2" value="project"/>
 		<level name="Maven: org.springframework.boot:spring-boot-starter-json:3.3.2" value="project"/>
@@ -140,17 +137,5 @@
 		<level name="Maven: org.springframework:spring-jcl:6.1.11" value="project"/>
 		<level name="Maven: org.springframework:spring-test:6.1.11" value="project"/>
 		<level name="Maven: org.xmlunit:xmlunit-core:2.9.1" value="project"/>
-		<level name="Maven: org.springframework.boot:spring-boot-starter-security:3.3.2" value="project"/>
-		<level name="Maven: org.springframework:spring-aop:6.1.11" value="project"/>
-		<level name="Maven: org.springframework.security:spring-security-config:6.3.1" value="project"/>
-		<level name="Maven: org.springframework.security:spring-security-core:6.3.1" value="project"/>
-		<level name="Maven: org.springframework.security:spring-security-crypto:6.3.1" value="project"/>
-		<level name="Maven: org.springframework.security:spring-security-web:6.3.1" value="project"/>
-		<level name="Maven: io.jsonwebtoken:jjwt-api:0.11.5" value="project"/>
-		<level name="Maven: io.jsonwebtoken:jjwt-impl:0.11.5" value="project"/>
-		<level name="Maven: io.jsonwebtoken:jjwt-jackson:0.11.5" value="project"/>
-		<level name="Maven: com.fasterxml.jackson.core:jackson-databind:2.17.2" value="project"/>
-		<level name="Maven: com.fasterxml.jackson.core:jackson-annotations:2.17.2" value="project"/>
-		<level name="Maven: com.fasterxml.jackson.core:jackson-core:2.17.2" value="project"/>
 	</levels>
 </component>
