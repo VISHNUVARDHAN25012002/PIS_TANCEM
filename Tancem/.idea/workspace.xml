@@ -6,28 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="e8f1467d-c639-44c6-b51d-35b161b7465e" name="Changes" comment="kiruba(equipment)">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/Tancem/PIS/Controller/EquipmentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Tancem/PIS/Controller/EquipmentController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/Tancem/PIS/Controller/PlantDepartmentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Tancem/PIS/Controller/PlantDepartmentController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/Tancem/PIS/Controller/ProblemController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Tancem/PIS/Controller/ProblemController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/Tancem/PIS/Controller/SubEquipmentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Tancem/PIS/Controller/SubEquipmentController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/Tancem/PIS/Exceptions/GlobalExceptionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Tancem/PIS/Exceptions/GlobalExceptionHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/Tancem/PIS/Model/Equipment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Tancem/PIS/Model/Equipment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/Tancem/PIS/Model/EquipmentGroup.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Tancem/PIS/Model/EquipmentGroup.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/Tancem/PIS/Model/PlantDepartment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Tancem/PIS/Model/PlantDepartment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/Tancem/PIS/Model/Problem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Tancem/PIS/Model/Problem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/Tancem/PIS/Model/SubEquipment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Tancem/PIS/Model/SubEquipment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/Tancem/PIS/ServiceImp/EquipmentServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Tancem/PIS/ServiceImp/EquipmentServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/Tancem/PIS/Controller/EquipmentController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/Tancem/PIS/Controller/EquipmentController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/Tancem/PIS/Controller/PlantDepartmentController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/Tancem/PIS/Controller/PlantDepartmentController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/Tancem/PIS/Controller/ProblemController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/Tancem/PIS/Controller/ProblemController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/Tancem/PIS/Controller/SubEquipmentController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/Tancem/PIS/Controller/SubEquipmentController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/Tancem/PIS/Exceptions/GlobalExceptionHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/Tancem/PIS/Exceptions/GlobalExceptionHandler.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/Tancem/PIS/Model/Equipment.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/Tancem/PIS/Model/Equipment.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/Tancem/PIS/Model/EquipmentGroup.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/Tancem/PIS/Model/EquipmentGroup.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/Tancem/PIS/Model/PlantDepartment.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/Tancem/PIS/Model/PlantDepartment.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/Tancem/PIS/Model/Problem.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/Tancem/PIS/Model/Problem.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/Tancem/PIS/Model/SubEquipment.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/Tancem/PIS/Model/SubEquipment.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/Tancem/PIS/ServiceImp/EquipmentServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/Tancem/PIS/ServiceImp/EquipmentServiceImpl.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -147,7 +125,10 @@
       <workItem from="1722007451569" duration="13055000" />
       <workItem from="1722059600539" duration="11599000" />
       <workItem from="1722088607192" duration="893000" />
-      <workItem from="1722092528143" duration="1119000" />
+      <workItem from="1722092528143" duration="1262000" />
+      <workItem from="1722095168130" duration="331000" />
+      <workItem from="1722183860491" duration="31000" />
+      <workItem from="1722226544974" duration="1112000" />
     </task>
     <task id="LOCAL-00001" summary="kiruba(equipment)">
       <option name="closed" value="true" />
@@ -165,7 +146,15 @@
       <option name="project" value="LOCAL" />
       <updated>1721978335447</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="kiruba(equipment)">
+      <option name="closed" value="true" />
+      <created>1722093746993</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1722093746993</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
