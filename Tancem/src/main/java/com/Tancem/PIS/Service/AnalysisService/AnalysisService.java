@@ -9,4 +9,6 @@ public interface AnalysisService {
     Analysis saveAnalysis(Analysis analysis);
     List<Analysis> getAllAnalyses();
     Analysis getAnalysisById(int id);
+    Analysis updateAnalysis(Analysis analysis);
+    void deleteAnalysis(int id);
 }

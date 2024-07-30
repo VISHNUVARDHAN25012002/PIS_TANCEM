@@ -8,4 +8,6 @@ public interface LabAnalysisService {
     LabAnalysis saveLabAnalysis(LabAnalysis labAnalysis);
     List<LabAnalysis> getAllLabAnalyses();
     LabAnalysis getLabAnalysisById(int id);
+    LabAnalysis updateLabAnalysis(LabAnalysis labAnalysis);
+    void deleteLabAnalysis(int id);
 }

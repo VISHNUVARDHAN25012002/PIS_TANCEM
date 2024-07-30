@@ -29,4 +29,14 @@ public class LabAnalysisServiceImpl implements LabAnalysisService {
     public LabAnalysis getLabAnalysisById(int id) {
         return labAnalysisRepository.findById(id).orElse(null);
     }
+
+    @Override
+    public LabAnalysis updateLabAnalysis(LabAnalysis labAnalysis) {
+        return labAnalysisRepository.save(labAnalysis);
+    }
+
+    @Override
+    public void deleteLabAnalysis(int id) {
+        labAnalysisRepository.deleteById(id);
+    }
 }

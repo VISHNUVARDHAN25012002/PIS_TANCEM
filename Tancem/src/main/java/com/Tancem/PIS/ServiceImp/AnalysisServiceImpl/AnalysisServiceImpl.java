@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+
 @Service
 public class AnalysisServiceImpl implements AnalysisService {
 
@@ -28,5 +29,15 @@ public class AnalysisServiceImpl implements AnalysisService {
     @Override
     public Analysis getAnalysisById(int id) {
         return analysisRepository.findById(id).orElse(null);
+    }
+
+    @Override
+    public Analysis updateAnalysis(Analysis analysis) {
+        return analysisRepository.save(analysis);
+    }
+
+    @Override
+    public void deleteAnalysis(int id) {
+        analysisRepository.deleteById(id);
     }
 }
