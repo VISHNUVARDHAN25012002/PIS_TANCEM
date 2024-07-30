@@ -5,11 +5,16 @@ import com.Tancem.PIS.Service.AnalysisService.AnalysisService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 @RestController
 @RequestMapping("/api/analysis")
@@ -17,6 +22,8 @@ public class AnalysisController {
 
     @Autowired
     private AnalysisService analysisService;
+
+    private static final Logger logger = LoggerFactory.getLogger(AnalysisController.class);
 
     @PostMapping
     public ResponseEntity<Map<String, Object>> createAnalysis(@RequestBody Analysis analysis) {
@@ -42,21 +49,41 @@ public class AnalysisController {
 
     @PutMapping("/{id}")
     public ResponseEntity<Map<String, Object>> updateAnalysis(@PathVariable int id, @RequestBody Analysis analysis) {
-        analysis.setId(id);
-        Analysis updatedAnalysis = analysisService.updateAnalysis(analysis);
         Map<String, Object> response = new HashMap<>();
-        response.put("status", HttpStatus.OK.value());
-        response.put("message", "Analysis updated successfully");
-        response.put("data", updatedAnalysis);
+        try {
+            analysis.setId(id);
+            Analysis updatedAnalysis = analysisService.updateAnalysis(analysis);
+            response.put("status", HttpStatus.OK.value());
+            response.put("message", "Analysis updated successfully");
+            response.put("data", updatedAnalysis);
+            logUserAction("update", id);
+        } catch (Exception e) {
+            logger.error("Error updating analysis with id {}: {}", id, e.getMessage());
+            response.put("status", HttpStatus.INTERNAL_SERVER_ERROR.value());
+            response.put("message", "Error updating analysis");
+        }
         return ResponseEntity.ok(response);
     }
 
     @DeleteMapping("/{id}")
     public ResponseEntity<Map<String, Object>> deleteAnalysis(@PathVariable int id) {
-        analysisService.deleteAnalysis(id);
         Map<String, Object> response = new HashMap<>();
-        response.put("status", HttpStatus.NO_CONTENT.value());
-        response.put("message", "Analysis deleted successfully");
+        try {
+            analysisService.deleteAnalysis(id);
+            response.put("status", HttpStatus.NO_CONTENT.value());
+            response.put("message", "Analysis deleted successfully");
+            logUserAction("delete", id);
+        } catch (Exception e) {
+            logger.error("Error deleting analysis with id {}: {}", id, e.getMessage());
+            response.put("status", HttpStatus.INTERNAL_SERVER_ERROR.value());
+            response.put("message", "Error deleting analysis");
+        }
         return ResponseEntity.ok(response);
+    }
+
+    private void logUserAction(String action, int id) {
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        String username = (authentication != null) ? authentication.getName() : "Unknown User";
+        logger.info("User '{}' performed '{}' on analysis with id {}", username, action, id);
     }
 }

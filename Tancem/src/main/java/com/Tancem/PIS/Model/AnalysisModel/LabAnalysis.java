@@ -37,5 +37,4 @@ public class LabAnalysis {
     @JoinColumn(name = "analysis_id", referencedColumnName = "id")
     private Analysis analysis;
 
-    // Getters and Setters
 }
