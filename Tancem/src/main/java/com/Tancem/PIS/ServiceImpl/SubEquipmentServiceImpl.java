@@ -1,4 +1,4 @@
-package com.Tancem.PIS.ServiceImp;
+package com.Tancem.PIS.ServiceImpl;
 
 
 import com.Tancem.PIS.DAO.SubEquipmentRepository;

@@ -1,6 +1,6 @@
 package com.Tancem.PIS.config;
 
-import com.Tancem.PIS.ServiceImp.UserServiceImpl;
+import com.Tancem.PIS.ServiceImpl.UserServiceImpl;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

@@ -1,7 +1,7 @@
 package com.Tancem.PIS.config;
 
 import com.Tancem.PIS.Service.JWTService;
-import com.Tancem.PIS.ServiceImp.UserServiceImpl;
+import com.Tancem.PIS.ServiceImpl.UserServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.context.SecurityContextHolder;
