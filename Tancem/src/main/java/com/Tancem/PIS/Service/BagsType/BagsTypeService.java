@@ -1,6 +1,6 @@
 package com.Tancem.PIS.Service.BagsType;
 
-import com.Tancem.PIS.Model.BagsType.BagsType;
+import com.Tancem.PIS.Model.BagsType;
 
 import java.util.List;
 

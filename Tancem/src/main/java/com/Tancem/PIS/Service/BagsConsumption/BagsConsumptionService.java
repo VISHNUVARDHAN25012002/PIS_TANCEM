@@ -1,6 +1,6 @@
 package com.Tancem.PIS.Service.BagsConsumption;
 
-import com.Tancem.PIS.Model.BagsConsumption.BagsConsumption;
+import com.Tancem.PIS.Model.BagsConsumption;
 
 import java.util.List;
 

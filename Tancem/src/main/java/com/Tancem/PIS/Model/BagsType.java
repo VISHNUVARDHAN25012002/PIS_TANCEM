@@ -1,4 +1,4 @@
-package com.Tancem.PIS.Model.BagsType;
+package com.Tancem.PIS.Model;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;

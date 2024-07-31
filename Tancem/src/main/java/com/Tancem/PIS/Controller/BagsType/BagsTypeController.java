@@ -1,6 +1,7 @@
 package com.Tancem.PIS.Controller.BagsType;
 import com.Tancem.PIS.Exceptions.ResourceNotFoundException;
-import com.Tancem.PIS.Model.BagsType.BagsType;
+
+import  com.Tancem.PIS.Model.BagsType;
 import com.Tancem.PIS.Service.BagsType.BagsTypeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
