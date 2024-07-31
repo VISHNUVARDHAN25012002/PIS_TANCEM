@@ -2,7 +2,6 @@ package com.Tancem.PIS.Controller.BagsType;
 import com.Tancem.PIS.Exceptions.ResourceNotFoundException;
 import com.Tancem.PIS.Model.BagsType.BagsType;
 import com.Tancem.PIS.Service.BagsType.BagsTypeService;
-import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -43,7 +42,7 @@ public class BagsTypeController {
     }
 
     @PostMapping("/create")
-    public ResponseEntity<Map<String, Object>> createBagType(@Valid @RequestBody BagsType bagType) {
+    public ResponseEntity<Map<String, Object>> createBagType(@RequestBody BagsType bagType) {
         // Check if ID already exists
         BagsType existingBagType = bagsTypeService.getBagTypeById(bagType.getId());
         if (existingBagType != null) {
@@ -68,7 +67,7 @@ public class BagsTypeController {
 
 
     @PutMapping("/update/{id}")
-    public ResponseEntity<Map<String, Object>> updateBagType(@PathVariable int id, @Valid @RequestBody BagsType bagType) {
+    public ResponseEntity<Map<String, Object>> updateBagType(@PathVariable int id,  @RequestBody BagsType bagType) {
         BagsType existingBagType = bagsTypeService.getBagTypeById(id);
         if (existingBagType == null) {
             throw new ResourceNotFoundException("Bag type not found with id: " + id);

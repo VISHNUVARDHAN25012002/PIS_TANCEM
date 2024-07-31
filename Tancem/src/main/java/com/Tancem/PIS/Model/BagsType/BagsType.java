@@ -1,8 +1,6 @@
 package com.Tancem.PIS.Model.BagsType;
 
 import jakarta.persistence.*;
-import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -22,7 +20,7 @@ public class BagsType {
 //    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    @NotBlank(message = "Bag type is required.")
+
     private String types_Of_Bags;
 
     @CreatedDate

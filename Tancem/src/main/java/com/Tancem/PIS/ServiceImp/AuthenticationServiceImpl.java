@@ -19,7 +19,9 @@ import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Map;
+import java.util.Set;
 
 @Service
 @RequiredArgsConstructor
@@ -30,6 +32,8 @@ public class AuthenticationServiceImpl implements AuthenticationService {
     private final UserRepository userRepository;
     private final PasswordEncoder passwordEncoder;
 
+    private final Set<String> tokenBlacklist = new HashSet<>();
+
     @Override
     public JwtAuthenticationResponse signin(SigninRequest signinRequest) {
         Authentication authentication = authenticationManager.authenticate(
@@ -39,9 +43,8 @@ public class AuthenticationServiceImpl implements AuthenticationService {
         UserDetails userDetails = (UserDetails) authentication.getPrincipal();
         User user = (User) userDetails; // Assuming User implements UserDetails
 
-        String jwt = jwtService.generateToken(new HashMap<>(), userDetails);
+        String jwt = jwtService.generateToken(Map.of(), userDetails);
 
-        // Prepare the response data
         JwtAuthenticationResponse.Data responseData = new JwtAuthenticationResponse.Data(
                 user.getEmpId(),
                 user.getRole().name()
@@ -72,8 +75,33 @@ public class AuthenticationServiceImpl implements AuthenticationService {
         user.setPassword(passwordEncoder.encode(signupRequest.getPassword()));
         user.setRole(User.Role.valueOf(signupRequest.getRole()));
         user.setCreatedAt(LocalDateTime.now());
-        user.setCreatedBy("System"); // Replace with actual creator's ID if available
+        user.setCreatedBy(signupRequest.getEmpId());
         userRepository.save(user);
         return user;
+    }
+
+    @Override
+    public void invalidateToken(String token) {
+        tokenBlacklist.add(token);
+    }
+
+    @Override
+    public boolean isTokenInvalid(String token) {
+        return tokenBlacklist.contains(token);
+    }
+
+    @Override
+    public Map<String, String> invalidateTokenAndGetUserData(String token) {
+        tokenBlacklist.add(token);
+        String empId = jwtService.extractUserName(token);
+        User user = userRepository.findByEmpId(empId).orElse(null);
+
+        Map<String, String> userData = new HashMap<>();
+        if (user != null) {
+            userData.put("empId", user.getEmpId());
+            userData.put("role", user.getRole().name());
+        }
+
+        return userData;
     }
 }

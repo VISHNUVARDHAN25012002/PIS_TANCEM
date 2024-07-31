@@ -2,14 +2,11 @@ package com.Tancem.PIS.Model.BagsConsumption;
 
 import com.Tancem.PIS.Model.BagsType.BagsType;
 import jakarta.persistence.*;
-import jakarta.validation.constraints.Min;
-import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.sql.Date;
-import java.time.LocalDate;
 
 @Entity
 @Data
@@ -21,7 +18,7 @@ public class BagsConsumption {
     private int id;
 
 
-    @NotNull(message = "Transaction date is required.")
+
     private Date transaction_Date;
 
 

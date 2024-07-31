@@ -2,7 +2,7 @@ package com.Tancem.PIS.Controller.BagsConsumption;
 import com.Tancem.PIS.Exceptions.ResourceNotFoundException;
 import com.Tancem.PIS.Model.BagsConsumption.BagsConsumption;
 import com.Tancem.PIS.Service.BagsConsumption.BagsConsumptionService;
-import jakarta.validation.Valid;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -47,7 +47,7 @@ public class BagsConsumptionController {
     }
 
     @PostMapping("/create")
-    public ResponseEntity<Map<String, Object>> createBag(@Valid @RequestBody BagsConsumption bag) {
+    public ResponseEntity<Map<String, Object>> createBag( @RequestBody BagsConsumption bag) {
         // Check if ID already exists
         if (bagsConsumptionService.getBagById(bag.getId()) != null) {
             Map<String, Object> response = new HashMap<>();
@@ -65,7 +65,7 @@ public class BagsConsumptionController {
     }
 
     @PutMapping("/update/{id}")
-    public ResponseEntity<Map<String, Object>> updateBag(@PathVariable int id, @Valid @RequestBody BagsConsumption bag) {
+    public ResponseEntity<Map<String, Object>> updateBag(@PathVariable int id,  @RequestBody BagsConsumption bag) {
         BagsConsumption existingBag = bagsConsumptionService.getBagById(id);
         if (existingBag == null) {
             throw new ResourceNotFoundException("Bag not found with id: " + id);
