@@ -3,26 +3,21 @@ package com.Tancem.PIS.config;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
-
-import jakarta.servlet.FilterChain;
-import jakarta.servlet.FilterConfig;
-import jakarta.servlet.ServletException;
-import jakarta.servlet.ServletRequest;
-import jakarta.servlet.ServletResponse;
+import jakarta.servlet.*;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import jakarta.servlet.Filter;
 import java.io.IOException;
-import java.util.Collections;
+import java.util.*;
 
 @Component
 public class RequestResponseLoggingFilter implements Filter {
 
     private static final Logger logger = LoggerFactory.getLogger(RequestResponseLoggingFilter.class);
+    private static final Set<String> SENSITIVE_HEADERS = new HashSet<>(Arrays.asList("authorization", "cookie"));
 
     @Override
-    public void init(FilterConfig filterConfig) throws ServletException {
-        // Initialization logic, if any
+    public void init(FilterConfig filterConfig) {
+        // Initialization logic, if needed
     }
 
     @Override
@@ -40,16 +35,27 @@ public class RequestResponseLoggingFilter implements Filter {
     private void logRequest(HttpServletRequest request) {
         logger.debug("Request Method: {}", request.getMethod());
         logger.debug("Request URI: {}", request.getRequestURI());
-        logger.debug("Request Headers: {}", Collections.list(request.getHeaderNames()));
+        Enumeration<String> headerNames = request.getHeaderNames();
+        while (headerNames.hasMoreElements()) {
+            String headerName = headerNames.nextElement();
+            if (!SENSITIVE_HEADERS.contains(headerName.toLowerCase())) {
+                logger.debug("Request Header: {} = {}", headerName, request.getHeader(headerName));
+            }
+        }
     }
 
     private void logResponse(HttpServletResponse response) {
         logger.debug("Response Status: {}", response.getStatus());
-        logger.debug("Response Headers: {}", response.getHeaderNames());
+        Collection<String> headerNames = response.getHeaderNames();
+        for (String headerName : headerNames) {
+            if (!SENSITIVE_HEADERS.contains(headerName.toLowerCase())) {
+                logger.debug("Response Header: {} = {}", headerName, response.getHeader(headerName));
+            }
+        }
     }
 
     @Override
     public void destroy() {
-        // Cleanup logic, if any
+        // Cleanup logic, if needed
     }
 }
