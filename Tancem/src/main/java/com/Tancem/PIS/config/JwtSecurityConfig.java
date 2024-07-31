@@ -1,6 +1,6 @@
 package com.Tancem.PIS.config;
 
-import com.Tancem.PIS.ServiceImp.UserServiceImpl;
+import com.Tancem.PIS.ServiceImpl.UserServiceImpl;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -30,7 +30,7 @@ public class JwtSecurityConfig {
         http
                 .csrf(csrf -> csrf.disable())
                 .authorizeHttpRequests(auth -> auth
-                        .requestMatchers("/api/v1/auth/**").permitAll()
+                        .requestMatchers("/api/v1/auth/").permitAll()
                         .requestMatchers("/api/v1/admin").hasRole("ADMIN")
                         .requestMatchers("/api/v1/user").hasRole("USER")
                         .anyRequest().authenticated())
