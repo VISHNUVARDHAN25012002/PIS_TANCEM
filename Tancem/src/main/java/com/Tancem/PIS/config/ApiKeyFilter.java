@@ -38,7 +38,7 @@ public class ApiKeyFilter extends OncePerRequestFilter {
         } else {
             System.out.println("Invalid API Key. Access denied.");
             response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
-            response.getWriter().write("Invalid API Key");
+            response.getWriter().write("Invalid API Key. Access denied.");
         }
     }
 }
