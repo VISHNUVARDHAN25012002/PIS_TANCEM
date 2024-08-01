@@ -13,7 +13,7 @@ import java.util.Map;
 import java.util.Objects;
 
 @RestController
-@RequestMapping("/tancem/pis/equipment_group")
+@RequestMapping("/tancem/pis/equipment-group")
 public class EquipmentGroupController {
 
     @Autowired
