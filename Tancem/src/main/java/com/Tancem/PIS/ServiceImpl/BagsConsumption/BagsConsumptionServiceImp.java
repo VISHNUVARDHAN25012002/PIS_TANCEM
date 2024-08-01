@@ -1,7 +1,7 @@
 package com.Tancem.PIS.ServiceImpl.BagsConsumption;
 
 import com.Tancem.PIS.Exceptions.ResourceNotFoundException;
-import com.Tancem.PIS.Model.BagsConsumption.BagsConsumption;
+import com.Tancem.PIS.Model.BagsConsumption;
 import com.Tancem.PIS.Repository.BagsConsumption.BagsConsumptionRepository;
 import com.Tancem.PIS.Service.BagsConsumption.BagsConsumptionService;
 import lombok.extern.slf4j.Slf4j;

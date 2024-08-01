@@ -1,6 +1,5 @@
-package com.Tancem.PIS.Model.BagsConsumption;
+package com.Tancem.PIS.Model;
 
-import com.Tancem.PIS.Model.BagsType.BagsType;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;

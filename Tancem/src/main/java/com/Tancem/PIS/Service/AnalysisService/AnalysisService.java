@@ -9,5 +9,7 @@ public interface AnalysisService {
     List<Analysis> getAllAnalyses();
     Analysis getAnalysisById(int id);
     Analysis updateAnalysis(Analysis analysis);
-    void deleteAnalysis(int id);
+    void deactivateAnalysis(int id);
+
+
 }

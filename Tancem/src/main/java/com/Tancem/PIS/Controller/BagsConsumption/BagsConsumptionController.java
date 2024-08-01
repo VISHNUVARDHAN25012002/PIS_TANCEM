@@ -1,8 +1,9 @@
 package com.Tancem.PIS.Controller.BagsConsumption;
 import com.Tancem.PIS.Exceptions.ResourceNotFoundException;
-import com.Tancem.PIS.Model.BagsConsumption.BagsConsumption;
-import com.Tancem.PIS.Service.BagsConsumption.BagsConsumptionService;
 
+
+import com.Tancem.PIS.Model.BagsConsumption;
+import com.Tancem.PIS.Service.BagsConsumption.BagsConsumptionService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -1,7 +1,7 @@
-package com.Tancem.PIS.ServiceImpl.BagsType;
+package com.Tancem.PIS.ServiceImpl;
 
 import com.Tancem.PIS.Exceptions.ResourceNotFoundException;
-import com.Tancem.PIS.Model.BagsType.BagsType;
+import com.Tancem.PIS.Model.BagsType;
 import com.Tancem.PIS.Repository.BagsType.BagsTypeRepository;
 import com.Tancem.PIS.Service.BagsType.BagsTypeService;
 import lombok.extern.slf4j.Slf4j;
