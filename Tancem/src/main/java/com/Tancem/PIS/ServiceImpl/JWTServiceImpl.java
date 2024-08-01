@@ -1,4 +1,4 @@
-package com.Tancem.PIS.ServiceImpl.JWTServiceImpl;
+package com.Tancem.PIS.ServiceImpl;
 
 import com.Tancem.PIS.Service.JWTService;
 import io.jsonwebtoken.Claims;
