@@ -1,4 +1,4 @@
-package com.Tancem.PIS.DAO.Source_Repository;
+package com.Tancem.PIS.Material.Repository;
 
 import com.Tancem.PIS.Model.Source.Source;
 import org.springframework.data.jpa.repository.JpaRepository;

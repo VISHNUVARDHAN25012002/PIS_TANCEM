@@ -1,6 +1,6 @@
 package com.Tancem.PIS.ServiceImpl.Material_Type_Service_Impl;
 
-import com.Tancem.PIS.DAO.Material_Type_Repository.MaterialTypeRepository;
+import com.Tancem.PIS.Material.Repository.MaterialTypeRepository;
 import com.Tancem.PIS.Exceptions.CustomException;
 
 import com.Tancem.PIS.Model.Material_Type.Material_Type;

@@ -1,4 +1,4 @@
-package com.Tancem.PIS.Model.Material;
+package com.Tancem.PIS.Material.Entity;
 
 
 import com.Tancem.PIS.Model.Material_Type.Material_Type;

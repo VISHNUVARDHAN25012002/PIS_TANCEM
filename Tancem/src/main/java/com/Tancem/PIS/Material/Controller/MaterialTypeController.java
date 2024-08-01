@@ -1,4 +1,4 @@
-package com.Tancem.PIS.Controller.Material_Type_Controller;
+package com.Tancem.PIS.Material.Controller;
 
 import com.Tancem.PIS.DTO.ErrorResponse;
 import com.Tancem.PIS.Exceptions.CustomException;

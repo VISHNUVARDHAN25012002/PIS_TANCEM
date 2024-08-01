@@ -1,10 +1,10 @@
-package com.Tancem.PIS.ServiceImpl.Material_Service_Impl;
+package com.Tancem.PIS.Material.ServiceImpl;
 
-import com.Tancem.PIS.DAO.Material_Repository.MaterialRepository;
+import com.Tancem.PIS.Material.Repository.MaterialRepository;
 
 import com.Tancem.PIS.Exceptions.CustomException;
-import com.Tancem.PIS.Model.Material.Material;
-import com.Tancem.PIS.Service.Material_Service.MaterialService;
+import com.Tancem.PIS.Material.Entity.Material;
+import com.Tancem.PIS.Material.Service.MaterialService;
 import jakarta.transaction.Transactional;
 
 import org.springframework.beans.factory.annotation.Autowired;

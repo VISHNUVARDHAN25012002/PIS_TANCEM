@@ -1,9 +1,9 @@
-package com.Tancem.PIS.Controller.Material_Controller;
+package com.Tancem.PIS.Material.Controller;
 
 import com.Tancem.PIS.DTO.ErrorResponse;
 import com.Tancem.PIS.Exceptions.CustomException;
-import com.Tancem.PIS.Model.Material.Material;
-import com.Tancem.PIS.Service.Material_Service.MaterialService;
+import com.Tancem.PIS.Material.Entity.Material;
+import com.Tancem.PIS.Material.Service.MaterialService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;

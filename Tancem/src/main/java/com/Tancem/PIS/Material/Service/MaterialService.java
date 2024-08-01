@@ -1,6 +1,6 @@
-package com.Tancem.PIS.Service.Material_Service;
+package com.Tancem.PIS.Material.Service;
 
-import com.Tancem.PIS.Model.Material.Material;
+import com.Tancem.PIS.Material.Entity.Material;
 
 import java.util.List;
 

@@ -1,6 +1,6 @@
 package com.Tancem.PIS.Model.Source;
 
-import com.Tancem.PIS.Model.Material.Material;
+import com.Tancem.PIS.Material.Entity.Material;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;

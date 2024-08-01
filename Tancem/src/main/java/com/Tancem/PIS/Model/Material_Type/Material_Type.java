@@ -1,6 +1,6 @@
 package com.Tancem.PIS.Model.Material_Type;
 
-import com.Tancem.PIS.Model.Material.Material;
+import com.Tancem.PIS.Material.Entity.Material;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;

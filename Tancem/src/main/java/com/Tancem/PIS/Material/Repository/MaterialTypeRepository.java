@@ -1,4 +1,4 @@
-package com.Tancem.PIS.DAO.Material_Type_Repository;
+package com.Tancem.PIS.Material.Repository;
 
 
 import com.Tancem.PIS.Model.Material_Type.Material_Type;

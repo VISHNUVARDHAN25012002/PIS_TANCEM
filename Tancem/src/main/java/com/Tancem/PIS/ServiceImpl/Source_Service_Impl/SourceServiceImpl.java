@@ -1,6 +1,6 @@
 package com.Tancem.PIS.ServiceImpl.Source_Service_Impl;
 
-import com.Tancem.PIS.DAO.Source_Repository.SourceRepository;
+import com.Tancem.PIS.Material.Repository.SourceRepository;
 import com.Tancem.PIS.Exceptions.CustomException;
 import com.Tancem.PIS.Model.Source.Source;
 import com.Tancem.PIS.Service.Source_Service.SourceService;
