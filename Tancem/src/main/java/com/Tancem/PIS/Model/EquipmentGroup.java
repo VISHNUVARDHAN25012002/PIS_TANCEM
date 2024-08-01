@@ -1,6 +1,5 @@
 package com.Tancem.PIS.Model;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 import java.time.LocalDateTime;
 import java.util.HashSet;
@@ -10,47 +9,37 @@ import java.util.Set;
 public class EquipmentGroup {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    private String equipment_Group;
+    private String equipmentGroup;
 
-    private LocalDateTime created_At;
+    private LocalDateTime createdAt;
 
-    private LocalDateTime updated_At;
+    private LocalDateTime updatedAt;
 
     @PrePersist
     protected void onCreate() {
-        created_At = LocalDateTime.now();
-        updated_At = LocalDateTime.now();
+        createdAt = LocalDateTime.now();
+        updatedAt = LocalDateTime.now();
     }
 
     @PreUpdate
     protected void onUpdate() {
-        updated_At = LocalDateTime.now();
-        created_At = LocalDateTime.now();
+        updatedAt = LocalDateTime.now();
     }
 
     @OneToMany(mappedBy = "equipmentGroup", cascade = CascadeType.ALL, orphanRemoval = true)
-    @JsonBackReference
     private Set<Equipment> equipmentSet = new HashSet<>();
 
     @ManyToOne
     @JoinColumn(name = "plant_department_id", nullable = false)
     private PlantDepartment plantDepartment;
 
-
-    public EquipmentGroup(){}
-
-    public EquipmentGroup(Integer id, String equipment_Group, LocalDateTime created_At, LocalDateTime updated_At, Set<Equipment> equipmentSet) {
-        this.id = id;
-        this.equipment_Group = equipment_Group;
-        this.created_At = created_At;
-        this.updated_At = updated_At;
-        this.equipmentSet = equipmentSet;
-    }
+    // Default constructor
+    public EquipmentGroup() {}
 
     // Getters and Setters
-
     public Integer getId() {
         return id;
     }
@@ -60,29 +49,28 @@ public class EquipmentGroup {
     }
 
     public String getEquipmentGroup() {
-        return equipment_Group;
+        return equipmentGroup;
     }
 
     public void setEquipmentGroup(String equipmentGroup) {
-        this.equipment_Group = equipmentGroup;
+        this.equipmentGroup = equipmentGroup;
     }
 
     public LocalDateTime getCreatedAt() {
-        return created_At;
+        return createdAt;
     }
 
     public void setCreatedAt(LocalDateTime createdAt) {
-        this.created_At = createdAt;
+        this.createdAt = createdAt;
     }
 
     public LocalDateTime getUpdatedAt() {
-        return updated_At;
+        return updatedAt;
     }
 
     public void setUpdatedAt(LocalDateTime updatedAt) {
-        this.updated_At = updatedAt;
+        this.updatedAt = updatedAt;
     }
-
 
     public PlantDepartment getPlantDepartment() {
         return plantDepartment;

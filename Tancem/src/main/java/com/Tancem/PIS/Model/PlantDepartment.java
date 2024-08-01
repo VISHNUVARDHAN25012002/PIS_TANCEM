@@ -2,7 +2,6 @@ package com.Tancem.PIS.Model;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
-
 import java.time.LocalDateTime;
 import java.util.Set;
 
@@ -11,27 +10,23 @@ import java.util.Set;
 public class PlantDepartment {
 
     @Id
-    private int id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer id; // Changed from int to Integer
 
-    //@Column(name = "plant_department_description", nullable = false, length = 100)
-    private String plant_Department_Description;
+    private String plantDepartmentDescription;
 
-    //@Column(name = "created_at", updatable = false)
-    private LocalDateTime created_At;
+    private LocalDateTime createdAt;
 
-    //@Column(name = "updated_at")
-    private LocalDateTime updated_At;
+    private LocalDateTime updatedAt;
 
     @PrePersist
     protected void onCreate() {
-        updated_At = LocalDateTime.now();
-        created_At = LocalDateTime.now();
+        createdAt = LocalDateTime.now();
     }
 
     @PreUpdate
     protected void onUpdate() {
-        created_At = LocalDateTime.now();
-        updated_At = LocalDateTime.now();
+        updatedAt = LocalDateTime.now();
     }
 
     @OneToMany(mappedBy = "plantDepartment", cascade = CascadeType.ALL)
@@ -42,16 +37,12 @@ public class PlantDepartment {
 
     public PlantDepartment() {}
 
-    public PlantDepartment(int id, String plant_Department_Description, LocalDateTime created_At, LocalDateTime updated_At, Set<Problem> problems) {
+    public PlantDepartment(Integer id, String plantDepartmentDescription, LocalDateTime createdAt, LocalDateTime updatedAt, Set<Problem> problems) {
         this.id = id;
-        this.plant_Department_Description = plant_Department_Description;
-        this.created_At = created_At;
-        this.updated_At = updated_At;
+        this.plantDepartmentDescription = plantDepartmentDescription;
+        this.createdAt = createdAt;
+        this.updatedAt = updatedAt;
         this.problems = problems;
-    }
-
-    public PlantDepartment(String plant_Department_Description) {
-
     }
 
     public Integer getId() {
@@ -63,27 +54,27 @@ public class PlantDepartment {
     }
 
     public String getPlantDepartmentDescription() {
-        return plant_Department_Description;
+        return plantDepartmentDescription;
     }
 
     public void setPlantDepartmentDescription(String plantDepartmentDescription) {
-        this.plant_Department_Description = plantDepartmentDescription;
+        this.plantDepartmentDescription = plantDepartmentDescription;
     }
 
     public LocalDateTime getCreatedAt() {
-        return created_At;
+        return createdAt;
     }
 
     public void setCreatedAt(LocalDateTime createdAt) {
-        this.created_At = createdAt;
+        this.createdAt = createdAt;
     }
 
     public LocalDateTime getUpdatedAt() {
-        return updated_At;
+        return updatedAt;
     }
 
     public void setUpdatedAt(LocalDateTime updatedAt) {
-        this.updated_At = updatedAt;
+        this.updatedAt = updatedAt;
     }
 
     public Set<Problem> getProblems() {
@@ -94,5 +85,3 @@ public class PlantDepartment {
         this.problems = problems;
     }
 }
-
-

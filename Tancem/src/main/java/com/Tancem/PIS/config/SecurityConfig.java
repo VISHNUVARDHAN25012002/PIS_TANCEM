@@ -29,6 +29,7 @@ public class SecurityConfig {
                 .authorizeHttpRequests(auth -> auth
 
                         .requestMatchers("/api/v1/auth/**").permitAll()
+                        .requestMatchers("/tancem/pis/**").permitAll()
                         .requestMatchers("/api/v1/admin/**").hasRole("ADMIN")
                         .requestMatchers("/api/v1/user/public").hasAnyRole("ADMIN", "EMPLOYEE")
 

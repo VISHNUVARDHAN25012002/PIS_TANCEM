@@ -4,39 +4,32 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e8f1467d-c639-44c6-b51d-35b161b7465e" name="Changes" comment="Guptha spring security">
+    <list default="true" id="e8f1467d-c639-44c6-b51d-35b161b7465e" name="Changes" comment="Merge branch 'Kiruba' of https://github.com/VISHNUVARDHAN25012002/PIS_TANCEM&#10;&#10;# Conflicts:&#10;#&#9;Tancem/.idea/workspace.xml">
+      <change beforePath="$PROJECT_DIR$/.classpath" beforeDir="false" afterPath="$PROJECT_DIR$/.classpath" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/Tancem/PIS/Controller/Material/Material.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/Tancem/PIS/Controller/UserController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tancem.eml" beforeDir="false" afterPath="$PROJECT_DIR$/Tancem.eml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tancem.userlibraries" beforeDir="false" afterPath="$PROJECT_DIR$/Tancem.userlibraries" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/Tancem/PIS/Model/Equipment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Tancem/PIS/Model/Equipment.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/Tancem/PIS/Model/EquipmentGroup.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Tancem/PIS/Model/EquipmentGroup.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/Tancem/PIS/Model/Material/Material.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/Tancem/PIS/Model/Material/Material_Status.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/Tancem/PIS/Model/Material/Material_Type.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/Tancem/PIS/Model/Material/Source.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/Tancem/PIS/Model/PlantDepartment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Tancem/PIS/Model/PlantDepartment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/Tancem/PIS/Model/Problem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Tancem/PIS/Model/Problem.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/Tancem/PIS/Model/SubEquipment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Tancem/PIS/Model/SubEquipment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/Tancem/PIS/Repository/MaterialRepository/MaterialRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/Tancem/PIS/Repository/MaterialRepository/Material_Status.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/Tancem/PIS/Repository/MaterialRepository/Material_Type_Repository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/Tancem/PIS/Repository/MaterialRepository/SourceRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/Tancem/PIS/Controller/Material/Material.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/Tancem/PIS/Controller/UserController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/Tancem/PIS/Service/ProblemService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Tancem/PIS/Service/ProblemService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/Tancem/PIS/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Tancem/PIS/config/SecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/Tancem/PIS/Model/Equipment.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/Tancem/PIS/Model/Equipment.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/Tancem/PIS/Model/EquipmentGroup.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/Tancem/PIS/Model/EquipmentGroup.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/Tancem/PIS/Model/Material/Material.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/Tancem/PIS/Model/Material/Material_Status.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/Tancem/PIS/Model/Material/Material_Type.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/Tancem/PIS/Model/Material/Source.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/Tancem/PIS/Repository/MaterialRepository/MaterialRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/Tancem/PIS/Repository/MaterialRepository/Material_Status.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/Tancem/PIS/Repository/MaterialRepository/Material_Type_Repository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/Tancem/PIS/Repository/MaterialRepository/SourceRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/Tancem/PIS/Model/PlantDepartment.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/Tancem/PIS/Model/PlantDepartment.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/Tancem/PIS/Model/Problem.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/Tancem/PIS/Model/Problem.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/Tancem/PIS/Model/SubEquipment.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/Tancem/PIS/Model/SubEquipment.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/Tancem/PIS/config/SecurityConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/Tancem/PIS/config/SecurityConfig.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExportToHTMLSettings">
+    <option name="OUTPUT_DIRECTORY" value="$PROJECT_DIR$/../Tancem\exportToHTML" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -91,7 +84,7 @@
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
     &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Guptha/IdeaProjects/PIS_TANCEM/Tancem/src&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/Demo&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
@@ -156,8 +149,8 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-jdk-9f38398b9061-39b83d9b5494-intellij.indexing.shared.core-IU-241.17890.1" />
-        <option value="bundled-js-predefined-1d06a55b98c1-0b3e54e931b4-JavaScript-IU-241.17890.1" />
+        <option value="bundled-jdk-9f38398b9061-39b83d9b5494-intellij.indexing.shared.core-IU-241.17011.79" />
+        <option value="bundled-js-predefined-1d06a55b98c1-0b3e54e931b4-JavaScript-IU-241.17011.79" />
       </set>
     </attachedChunks>
   </component>
@@ -174,6 +167,7 @@
       <workItem from="1721711058924" duration="21530000" />
       <workItem from="1721745550885" duration="3860000" />
       <workItem from="1721801092373" duration="9708000" />
+      <workItem from="1722416867898" duration="7221000" />
     </task>
     <task id="LOCAL-00001" summary="Del">
       <option name="closed" value="true" />
@@ -247,7 +241,15 @@
       <option name="project" value="LOCAL" />
       <updated>1721977764524</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Merge branch 'Kiruba' of https://github.com/VISHNUVARDHAN25012002/PIS_TANCEM&#10;&#10;# Conflicts:&#10;#&#9;Tancem/.idea/workspace.xml">
+      <option name="closed" value="true" />
+      <created>1722245225270</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1722245225272</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -262,6 +264,7 @@
     <MESSAGE value="vichu Spring Security3" />
     <MESSAGE value="Guptha spring security" />
     <MESSAGE value="material" />
-    <option name="LAST_COMMIT_MESSAGE" value="material" />
+    <MESSAGE value="Merge branch 'Kiruba' of https://github.com/VISHNUVARDHAN25012002/PIS_TANCEM&#10;&#10;# Conflicts:&#10;#&#9;Tancem/.idea/workspace.xml" />
+    <option name="LAST_COMMIT_MESSAGE" value="Merge branch 'Kiruba' of https://github.com/VISHNUVARDHAN25012002/PIS_TANCEM&#10;&#10;# Conflicts:&#10;#&#9;Tancem/.idea/workspace.xml" />
   </component>
 </project>

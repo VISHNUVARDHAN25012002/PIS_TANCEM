@@ -1,6 +1,5 @@
 package com.Tancem.PIS.Model;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 import java.time.LocalDateTime;
 
@@ -9,56 +8,34 @@ import java.time.LocalDateTime;
 public class Problem {
 
     @Id
+   // @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-   // @Column(name = "problem", nullable = false, length = 45)
     private String problem;
 
     @ManyToOne
     @JoinColumn(name = "plant_department_id", nullable = false)
-    @JsonBackReference
     private PlantDepartment plantDepartment;
 
-    //@Column(name = "created_at", updatable = false)
-    private LocalDateTime created_At;
+    private LocalDateTime createdAt;
 
-   // @Column(name = "updated_at")
-    private LocalDateTime updated_At;
+    private LocalDateTime updatedAt;
 
     @PrePersist
     protected void onCreate() {
-        created_At = LocalDateTime.now();
-        updated_At = LocalDateTime.now();
+        createdAt = LocalDateTime.now();
+        updatedAt = LocalDateTime.now();
     }
 
     @PreUpdate
     protected void onUpdate() {
-        created_At = LocalDateTime.now();
-        updated_At = LocalDateTime.now();
+        updatedAt = LocalDateTime.now();
     }
 
     // Default constructor
     public Problem() {}
 
-    public Problem(Integer id, String problem, PlantDepartment plantDepartment, LocalDateTime created_At, LocalDateTime updated_At) {
-        this.id = id;
-        this.problem = problem;
-        this.plantDepartment = plantDepartment;
-        this.created_At = created_At;
-        this.updated_At = updated_At;
-    }
-
-    public Problem(String problem) {
-
-    }
-
-    // Constructor without id
-    public Problem(String problem, PlantDepartment plantDepartment) {
-        this.problem = problem;
-        this.plantDepartment = plantDepartment;
-    }
-
-    // Getter and Setter methods
+    // Getters and Setters
     public Integer getId() {
         return id;
     }
@@ -76,19 +53,19 @@ public class Problem {
     }
 
     public LocalDateTime getCreatedAt() {
-        return created_At;
+        return createdAt;
     }
 
     public void setCreatedAt(LocalDateTime createdAt) {
-        this.created_At = createdAt;
+        this.createdAt = createdAt;
     }
 
     public LocalDateTime getUpdatedAt() {
-        return updated_At;
+        return updatedAt;
     }
 
     public void setUpdatedAt(LocalDateTime updatedAt) {
-        this.updated_At = updatedAt;
+        this.updatedAt = updatedAt;
     }
 
     public PlantDepartment getPlantDepartment() {

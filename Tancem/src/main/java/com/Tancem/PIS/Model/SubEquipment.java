@@ -2,7 +2,6 @@ package com.Tancem.PIS.Model;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
-
 import java.time.LocalDateTime;
 
 @Entity
@@ -10,46 +9,33 @@ import java.time.LocalDateTime;
 public class SubEquipment {
 
     @Id
-    private int id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer id;
 
-   // @Column(name = "sub_equipment_description", nullable = false, length = 100)
-    private String sub_Equipment_Description;
+    private String subEquipmentDescription;
 
-   // @Column(name = "created_at", updatable = false)
-    private LocalDateTime created_At;
+    private LocalDateTime createdAt;
 
-   // @Column(name = "updated_at")
-    private LocalDateTime updated_At;
+    private LocalDateTime updatedAt;
 
     @ManyToOne
     @JoinColumn(name = "equipment_id", nullable = false)
     @JsonBackReference
     private Equipment equipment;
 
-
     @PrePersist
     protected void onCreate() {
-        created_At = LocalDateTime.now();
-        updated_At = LocalDateTime.now();
+        createdAt = LocalDateTime.now();
     }
 
     @PreUpdate
     protected void onUpdate() {
-        updated_At = LocalDateTime.now();
-        created_At = LocalDateTime.now();
+        updatedAt = LocalDateTime.now();
     }
+
+    // Getters and setters
 
     public SubEquipment() {}
-
-    public SubEquipment(int id, String sub_Equipment_Description, LocalDateTime created_At, LocalDateTime updated_At, Equipment equipment) {
-        this.id = id;
-        this.sub_Equipment_Description = sub_Equipment_Description;
-        this.created_At = created_At;
-        this.updated_At = updated_At;
-        this.equipment = equipment;
-    }
-
-    // Getters and Setters
 
     public Integer getId() {
         return id;
@@ -60,27 +46,27 @@ public class SubEquipment {
     }
 
     public String getSubEquipmentDescription() {
-        return sub_Equipment_Description;
+        return subEquipmentDescription;
     }
 
     public void setSubEquipmentDescription(String subEquipmentDescription) {
-        this.sub_Equipment_Description = subEquipmentDescription;
+        this.subEquipmentDescription = subEquipmentDescription;
     }
 
     public LocalDateTime getCreatedAt() {
-        return created_At;
+        return createdAt;
     }
 
     public void setCreatedAt(LocalDateTime createdAt) {
-        this.created_At = createdAt;
+        this.createdAt = createdAt;
     }
 
     public LocalDateTime getUpdatedAt() {
-        return updated_At;
+        return updatedAt;
     }
 
     public void setUpdatedAt(LocalDateTime updatedAt) {
-        this.updated_At = updatedAt;
+        this.updatedAt = updatedAt;
     }
 
     public Equipment getEquipment() {
@@ -91,4 +77,3 @@ public class SubEquipment {
         this.equipment = equipment;
     }
 }
-
