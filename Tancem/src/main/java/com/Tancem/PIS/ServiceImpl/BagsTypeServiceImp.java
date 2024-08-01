@@ -1,4 +1,4 @@
-package com.Tancem.PIS.ServiceImp.BagsType;
+package com.Tancem.PIS.ServiceImpl;
 
 import com.Tancem.PIS.Exceptions.ResourceNotFoundException;
 import com.Tancem.PIS.Model.BagsType;

@@ -1,4 +1,4 @@
-package com.Tancem.PIS.ServiceImp.AnalysisServiceImpl;
+package com.Tancem.PIS.ServiceImpl.AnalysisServiceImpl;
 
 import com.Tancem.PIS.Model.AnalysisModel.LabAnalysis;
 import com.Tancem.PIS.Repository.AnalysisRepository.LabAnalysisRepository;

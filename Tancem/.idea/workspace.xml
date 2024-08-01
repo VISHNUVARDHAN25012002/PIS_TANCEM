@@ -6,26 +6,18 @@
   <component name="ChangeListManager">
     <list default="true" id="e8f1467d-c639-44c6-b51d-35b161b7465e" name="Changes" comment="New Commit">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/Tancem/PIS/Controller/BagsType/BagsTypeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Tancem/PIS/Controller/BagsType/BagsTypeController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/Tancem/PIS/PisApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Tancem/PIS/PisApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/Tancem/PIS/config/ApiKeyFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Tancem/PIS/config/ApiKeyFilter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/Tancem/PIS/config/JwtAuthenticationFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Tancem/PIS/config/JwtAuthenticationFilter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/Tancem/PIS/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Tancem/PIS/config/SecurityConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/Tancem/PIS/Controller/AuthenticationController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/Tancem/PIS/DAO/RefreshTokenRequest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/Tancem/PIS/DAO/SigninRequest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/Tancem/PIS/DAO/SignupRequest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/Tancem/PIS/Exceptions/GlobalExceptionHandler.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/Tancem/PIS/Exceptions/ResourceNotFoundException.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/Tancem/PIS/Model/User$Role.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/Tancem/PIS/Model/User.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/Tancem/PIS/Service/AuthenticationService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/Tancem/PIS/Service/UserService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/Tancem/PIS/ServiceImp/JWTServiceImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/Tancem/PIS/config/JwtAuthenticationFilter.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/Tancem/PIS/config/JwtSecurityConfig.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/Tancem/PIS/config/RequestResponseLoggingFilter.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/Tancem/PIS/config/SecurityConfig.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/Tancem/PIS/Controller/AnalysisController/AnalysisController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Tancem/PIS/Controller/AnalysisController/AnalysisController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/Tancem/PIS/Model/AnalysisModel/Analysis.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Tancem/PIS/Model/AnalysisModel/Analysis.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/Tancem/PIS/Service/AnalysisService/AnalysisService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Tancem/PIS/Service/AnalysisService/AnalysisService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/Tancem/PIS/ServiceImp/AnalysisServiceImpl/AnalysisServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Tancem/PIS/ServiceImpl/AnalysisServiceImpl/AnalysisServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/Tancem/PIS/ServiceImp/AnalysisServiceImpl/LabAnalysisServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Tancem/PIS/ServiceImpl/AnalysisServiceImpl/LabAnalysisServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/Tancem/PIS/ServiceImp/BagsConsumption/BagsConsumptionServiceImp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Tancem/PIS/ServiceImpl/BagsConsumption/BagsConsumptionServiceImp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/Tancem/PIS/ServiceImp/BagsType/BagsTypeServiceImp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Tancem/PIS/ServiceImpl/BagsTypeServiceImp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/Tancem/PIS/Controller/AnalysisController/AnalysisController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/Tancem/PIS/Controller/AnalysisController/AnalysisController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/Tancem/PIS/Model/AnalysisModel/Analysis.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/Tancem/PIS/Model/AnalysisModel/Analysis.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/Tancem/PIS/PisApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/Tancem/PIS/PisApplication.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/Tancem/PIS/Service/AnalysisService/AnalysisService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/Tancem/PIS/Service/AnalysisService/AnalysisService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/Tancem/PIS/ServiceImp/AnalysisServiceImpl/AnalysisServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/Tancem/PIS/ServiceImp/AnalysisServiceImpl/AnalysisServiceImpl.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -72,49 +64,37 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.ApiKeyGenerator.executor": "Run",
-    "Application.GenerateSecretKey.executor": "Run",
-    "Application.PasswordEncoderDemo.executor": "Run",
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "Spring Boot.PisApplication.executor": "Run",
-    "git-widget-placeholder": "Vishnu",
-    "ignore.virus.scanning.warn.message": "true",
-    "kotlin-language-version-configured": "true",
-    "node.js.detected.package.eslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.ApiKeyGenerator.executor&quot;: &quot;Run&quot;,
+    &quot;Application.GenerateSecretKey.executor&quot;: &quot;Run&quot;,
+    &quot;Application.PasswordEncoderDemo.executor&quot;: &quot;Run&quot;,
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;Spring Boot.PisApplication.executor&quot;: &quot;Run&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;Vishnu&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "mysql"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;mysql&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="Push.Settings">
     <force-push-targets>
       <force-push-target remote-path="origin" branch="Vishnu" />
     </force-push-targets>
-  </component>
-  <component name="QodanaHighlightedReportService">
-    <option name="localRunNotPublishedPersistedInfo">
-      <LocalReportPersistedInfo>
-        <option name="path" value="C:\Users\Admin\AppData\Local\Temp\qodana_output\qodana.sarif.json" />
-        <option name="reportGuid" value="f45cf3f3-e8c4-4b5e-83c4-7586208edb45" />
-        <option name="reportName" value="Tancem/qodana/2024-07-31" />
-      </LocalReportPersistedInfo>
-    </option>
-  </component>
-  <component name="QodanaIsSelectedPersistenceService">
-    <option name="selectedOrLoading" value="true" />
   </component>
   <component name="QodanaReportsService">
     <option name="descriptions">
@@ -209,6 +189,8 @@
       <workItem from="1722308287454" duration="295000" />
       <workItem from="1722315227093" duration="14682000" />
       <workItem from="1722402058046" duration="6007000" />
+      <workItem from="1722441949110" duration="4109000" />
+      <workItem from="1722488420967" duration="2351000" />
     </task>
     <task id="LOCAL-00001" summary="Del">
       <option name="closed" value="true" />
@@ -354,7 +336,15 @@
       <option name="project" value="LOCAL" />
       <updated>1722429877608</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="New Commit">
+      <option name="closed" value="true" />
+      <created>1722431258904</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1722431258904</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

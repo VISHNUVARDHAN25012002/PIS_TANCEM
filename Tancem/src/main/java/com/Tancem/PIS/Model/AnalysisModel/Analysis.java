@@ -1,12 +1,12 @@
 package com.Tancem.PIS.Model.AnalysisModel;
 
-import org.springframework.data.annotation.CreatedDate;
-import org.springframework.data.annotation.LastModifiedDate;
-import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.springframework.data.annotation.CreatedDate;
+import org.springframework.data.annotation.LastModifiedDate;
+import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import java.sql.Timestamp;
 
@@ -24,6 +24,9 @@ public class Analysis {
     private String analysisType;
     private String description;
 
+    @Column(name = "is_active", nullable = false)
+    private boolean isActive = true; // Default to true
+
     @CreatedDate
     @Column(name = "created_at", nullable = false, updatable = false)
     private Timestamp createdAt;
@@ -31,4 +34,7 @@ public class Analysis {
     @LastModifiedDate
     @Column(name = "updated_at")
     private Timestamp updatedAt;
+
+    // Lombok will automatically generate the getters and setters if @Data is used
+    // No need for a manual setIsActive method
 }

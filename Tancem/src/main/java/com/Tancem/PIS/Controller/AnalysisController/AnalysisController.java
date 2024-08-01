@@ -16,11 +16,9 @@ import java.util.Map;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-
 @RestController
 @RequestMapping("/api/analysis")
 public class AnalysisController {
-
 
     @Autowired
     private AnalysisService analysisService;
@@ -67,18 +65,22 @@ public class AnalysisController {
         return ResponseEntity.ok(response);
     }
 
-    @DeleteMapping("/{id}")
-    public ResponseEntity<Map<String, Object>> deleteAnalysis(@PathVariable int id) {
+
+    @PutMapping("/deactivate/{id}")
+    public ResponseEntity<Map<String, Object>> deactivateAnalysis(@PathVariable int id) {
         Map<String, Object> response = new HashMap<>();
         try {
-            analysisService.deleteAnalysis(id);
-            response.put("status", HttpStatus.NO_CONTENT.value());
-            response.put("message", "Analysis deleted successfully");
-            logUserAction("delete", id);
+            logger.info("Deactivating analysis with ID: {}", id);
+            analysisService.deactivateAnalysis(id);
+            logger.info("Successfully deactivated analysis with ID: {}", id);
+
+            response.put("status", HttpStatus.OK.value());
+            response.put("message", "Analysis deactivated successfully");
+            logUserAction("deactivate", id);
         } catch (Exception e) {
-            logger.error("Error deleting analysis with id {}: {}", id, e.getMessage());
+            logger.error("Error deactivating analysis with id {}: {}", id, e.getMessage());
             response.put("status", HttpStatus.INTERNAL_SERVER_ERROR.value());
-            response.put("message", "Error deleting analysis");
+            response.put("message", "Error deactivating analysis: " + e.getMessage());
         }
         return ResponseEntity.ok(response);
     }
