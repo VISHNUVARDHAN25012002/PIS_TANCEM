@@ -6,6 +6,7 @@ import com.Tancem.PIS.DAO.SigninRequest;
 import com.Tancem.PIS.DAO.SignupRequest;
 import com.Tancem.PIS.Model.User;
 import com.Tancem.PIS.Service.AuthenticationService;
+import jakarta.servlet.http.HttpServletRequest;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -47,6 +48,28 @@ public class AuthenticationController {
         data.put("createdAt", registeredUser.getCreatedAt().format(DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss")));
         data.put("createdBy", registeredUser.getCreatedBy());
         response.put("data", data);
+
         return ResponseEntity.ok(response);
+    }
+
+    @PostMapping("/logout")
+    public ResponseEntity<Map<String, Object>> logout(HttpServletRequest request) {
+        String token = extractToken(request);
+        Map<String, String> userData = authenticationService.invalidateTokenAndGetUserData(token);
+
+        Map<String, Object> response = new HashMap<>();
+        response.put("status", 200);
+        response.put("message", "Logout successful.");
+        response.put("data", userData);
+
+        return ResponseEntity.ok(response);
+    }
+
+    private String extractToken(HttpServletRequest request) {
+        String headerAuth = request.getHeader("Authorization");
+        if (headerAuth != null && headerAuth.startsWith("Bearer ")) {
+            return headerAuth.substring(7);
+        }
+        return null;
     }
 }
