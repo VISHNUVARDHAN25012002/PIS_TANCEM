@@ -8,5 +8,6 @@ public interface PlantDepartmentService {
     List<PlantDepartment> getAllPlantDepartments();
     PlantDepartment getPlantDepartmentById(Integer id);
     PlantDepartment savePlantDepartment(PlantDepartment plantDepartment);
-    void deletePlantDepartment(Integer id);
+    void deactivatePlantDepartment(Integer id);
+    void activatePlantDepartment(Integer id);
 }

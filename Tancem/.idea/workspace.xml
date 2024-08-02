@@ -4,7 +4,70 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e8f1467d-c639-44c6-b51d-35b161b7465e" name="Changes" comment="kiruba(equipment)" />
+    <list default="true" id="e8f1467d-c639-44c6-b51d-35b161b7465e" name="Changes" comment="kiruba(equipment)">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/Tancem/PIS/Controller/EquipmentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Tancem/PIS/Controller/EquipmentController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/Tancem/PIS/Controller/EquipmentGroupController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Tancem/PIS/Controller/EquipmentGroupController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/Tancem/PIS/Controller/PlantDepartmentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Tancem/PIS/Controller/PlantDepartmentController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/Tancem/PIS/Controller/ProblemController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Tancem/PIS/Controller/ProblemController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/Tancem/PIS/Controller/SubEquipmentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Tancem/PIS/Controller/SubEquipmentController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/Tancem/PIS/Model/Equipment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Tancem/PIS/Model/Equipment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/Tancem/PIS/Model/EquipmentGroup.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Tancem/PIS/Model/EquipmentGroup.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/Tancem/PIS/Model/PlantDepartment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Tancem/PIS/Model/PlantDepartment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/Tancem/PIS/Model/Problem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Tancem/PIS/Model/Problem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/Tancem/PIS/Model/SubEquipment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Tancem/PIS/Model/SubEquipment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/Tancem/PIS/Model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Tancem/PIS/Model/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/Tancem/PIS/Repository/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Tancem/PIS/Repository/UserRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/Tancem/PIS/Service/EquipmentGroupService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Tancem/PIS/Service/EquipmentGroupService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/Tancem/PIS/Service/EquipmentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Tancem/PIS/Service/EquipmentService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/Tancem/PIS/Service/PlantDepartmentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Tancem/PIS/Service/PlantDepartmentService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/Tancem/PIS/Service/ProblemService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Tancem/PIS/Service/ProblemService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/Tancem/PIS/Service/SubEquipmentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Tancem/PIS/Service/SubEquipmentService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/Tancem/PIS/ServiceImp/AuthenticationServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Tancem/PIS/ServiceImp/AuthenticationServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/Tancem/PIS/ServiceImp/EquipmentGroupServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Tancem/PIS/ServiceImp/EquipmentGroupServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/Tancem/PIS/ServiceImp/EquipmentServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Tancem/PIS/ServiceImp/EquipmentServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/Tancem/PIS/ServiceImp/JWTServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Tancem/PIS/ServiceImp/JWTServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/Tancem/PIS/ServiceImp/PlantDepartmentServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Tancem/PIS/ServiceImp/PlantDepartmentServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/Tancem/PIS/ServiceImp/ProblemServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Tancem/PIS/ServiceImp/ProblemServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/Tancem/PIS/ServiceImp/SubEquipmentServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Tancem/PIS/ServiceImp/SubEquipmentServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/Tancem/PIS/ServiceImp/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Tancem/PIS/ServiceImp/UserServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/Tancem/PIS/config/GenerateSecretKey.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Tancem/PIS/config/GenerateSecretKey.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/Tancem/PIS/config/PasswordEncoderDemo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Tancem/PIS/config/PasswordEncoderDemo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/Tancem/PIS/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Tancem/PIS/config/SecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/Tancem/PIS/Controller/AdminController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/Tancem/PIS/Controller/AnalysisController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/Tancem/PIS/Controller/AnalysisController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/Tancem/PIS/Controller/EquipmentController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/Tancem/PIS/Controller/EquipmentController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/Tancem/PIS/Controller/EquipmentGroupController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/Tancem/PIS/Controller/EquipmentGroupController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/Tancem/PIS/Controller/PlantDepartmentController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/Tancem/PIS/Controller/PlantDepartmentController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/Tancem/PIS/Controller/ProblemController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/Tancem/PIS/Controller/ProblemController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/Tancem/PIS/Controller/SubEquipmentController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/Tancem/PIS/Controller/SubEquipmentController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/Tancem/PIS/Model/Analysis.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/Tancem/PIS/Model/Analysis.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/Tancem/PIS/Model/Equipment.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/Tancem/PIS/Model/Equipment.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/Tancem/PIS/Model/EquipmentGroup.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/Tancem/PIS/Model/EquipmentGroup.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/Tancem/PIS/Model/PlantDepartment.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/Tancem/PIS/Model/PlantDepartment.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/Tancem/PIS/Model/Problem.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/Tancem/PIS/Model/Problem.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/Tancem/PIS/Model/SubEquipment.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/Tancem/PIS/Model/SubEquipment.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/Tancem/PIS/Model/User$Role.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/Tancem/PIS/Model/User$Role.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/Tancem/PIS/Model/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/Tancem/PIS/Model/User.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/Tancem/PIS/Service/EquipmentGroupService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/Tancem/PIS/Service/EquipmentGroupService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/Tancem/PIS/Service/EquipmentService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/Tancem/PIS/Service/EquipmentService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/Tancem/PIS/Service/PlantDepartmentService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/Tancem/PIS/Service/PlantDepartmentService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/Tancem/PIS/Service/ProblemService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/Tancem/PIS/Service/ProblemService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/Tancem/PIS/Service/SubEquipmentService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/Tancem/PIS/Service/SubEquipmentService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/Tancem/PIS/ServiceImp/EquipmentGroupServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/Tancem/PIS/ServiceImp/EquipmentGroupServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/Tancem/PIS/ServiceImp/EquipmentServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/Tancem/PIS/ServiceImp/EquipmentServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/Tancem/PIS/ServiceImp/JWTServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/Tancem/PIS/ServiceImp/JWTServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/Tancem/PIS/ServiceImp/PlantDepartmentServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/Tancem/PIS/ServiceImp/PlantDepartmentServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/Tancem/PIS/ServiceImp/ProblemServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/Tancem/PIS/ServiceImp/ProblemServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/Tancem/PIS/ServiceImp/SubEquipmentServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/Tancem/PIS/ServiceImp/SubEquipmentServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/Tancem/PIS/ServiceImp/UserServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/Tancem/PIS/ServiceImp/UserServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/Tancem/PIS/config/GenerateSecretKey.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/Tancem/PIS/config/GenerateSecretKey.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/Tancem/PIS/config/PasswordEncoderDemo.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/Tancem/PIS/config/PasswordEncoderDemo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/Tancem/PIS/config/SecurityConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/Tancem/PIS/config/SecurityConfig.class" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -46,23 +109,24 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "Spring Boot.PisApplication.executor": "Run",
-    "git-widget-placeholder": "main",
-    "kotlin-language-version-configured": "true",
-    "node.js.detected.package.eslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;Spring Boot.PisApplication.executor&quot;: &quot;Run&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.project.maven.repository.indices&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager">
     <configuration name="PisApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
@@ -91,6 +155,10 @@
       <updated>1721635889187</updated>
       <workItem from="1721635890859" duration="187000" />
       <workItem from="1721643831262" duration="1000000" />
+      <workItem from="1722446270514" duration="5137000" />
+      <workItem from="1722486551574" duration="24962000" />
+      <workItem from="1722526401311" duration="1680000" />
+      <workItem from="1722576137663" duration="16687000" />
     </task>
     <task id="LOCAL-00001" summary="Del">
       <option name="closed" value="true" />
@@ -124,11 +192,38 @@
       <option name="project" value="LOCAL" />
       <updated>1722237716325</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="kiruba(equipment)">
+      <option name="closed" value="true" />
+      <created>1722238229199</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1722238229199</updated>
+    </task>
+    <task id="LOCAL-00006" summary="kiruba(equipment)">
+      <option name="closed" value="true" />
+      <created>1722238381125</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1722238381125</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="admin controller" />

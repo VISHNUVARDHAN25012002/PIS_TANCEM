@@ -21,6 +21,8 @@ public class SubEquipment {
    // @Column(name = "updated_at")
     private LocalDateTime updated_At;
 
+    private boolean isActive = true;
+
     @ManyToOne
     @JoinColumn(name = "equipment_id", nullable = false)
     @JsonBackReference
@@ -41,46 +43,59 @@ public class SubEquipment {
 
     public SubEquipment() {}
 
-    public SubEquipment(int id, String sub_Equipment_Description, LocalDateTime created_At, LocalDateTime updated_At, Equipment equipment) {
+    public SubEquipment(int id, String sub_Equipment_Description, LocalDateTime created_At, LocalDateTime updated_At, boolean isActive, Equipment equipment) {
         this.id = id;
         this.sub_Equipment_Description = sub_Equipment_Description;
         this.created_At = created_At;
         this.updated_At = updated_At;
+        this.isActive = isActive;
         this.equipment = equipment;
+    }
+
+    public SubEquipment(int id, String sub_Equipment_Description, LocalDateTime created_At, LocalDateTime updated_At, Equipment equipment, boolean isActive) {
+
     }
 
     // Getters and Setters
 
-    public Integer getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(int id) {
         this.id = id;
     }
 
-    public String getSubEquipmentDescription() {
+    public String getSub_Equipment_Description() {
         return sub_Equipment_Description;
     }
 
-    public void setSubEquipmentDescription(String subEquipmentDescription) {
-        this.sub_Equipment_Description = subEquipmentDescription;
+    public void setSub_Equipment_Description(String sub_Equipment_Description) {
+        this.sub_Equipment_Description = sub_Equipment_Description;
     }
 
-    public LocalDateTime getCreatedAt() {
+    public LocalDateTime getCreated_At() {
         return created_At;
     }
 
-    public void setCreatedAt(LocalDateTime createdAt) {
-        this.created_At = createdAt;
+    public void setCreated_At(LocalDateTime created_At) {
+        this.created_At = created_At;
     }
 
-    public LocalDateTime getUpdatedAt() {
+    public LocalDateTime getUpdated_At() {
         return updated_At;
     }
 
-    public void setUpdatedAt(LocalDateTime updatedAt) {
-        this.updated_At = updatedAt;
+    public void setUpdated_At(LocalDateTime updated_At) {
+        this.updated_At = updated_At;
+    }
+
+    public boolean isActive() {
+        return isActive;
+    }
+
+    public void setActive(boolean active) {
+        isActive = active;
     }
 
     public Equipment getEquipment() {

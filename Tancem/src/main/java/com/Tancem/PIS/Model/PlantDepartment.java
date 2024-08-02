@@ -22,6 +22,8 @@ public class PlantDepartment {
     //@Column(name = "updated_at")
     private LocalDateTime updated_At;
 
+    private boolean isActive = true;
+
     @PrePersist
     protected void onCreate() {
         updated_At = LocalDateTime.now();
@@ -40,50 +42,64 @@ public class PlantDepartment {
 
     // Getters and Setters
 
-    public PlantDepartment() {}
+    public PlantDepartment() {
+    }
 
-    public PlantDepartment(int id, String plant_Department_Description, LocalDateTime created_At, LocalDateTime updated_At, Set<Problem> problems) {
+    public PlantDepartment(int id, String plant_Department_Description, LocalDateTime created_At, LocalDateTime updated_At, boolean isActive, Set<Problem> problems) {
         this.id = id;
         this.plant_Department_Description = plant_Department_Description;
         this.created_At = created_At;
         this.updated_At = updated_At;
+        this.isActive = isActive;
         this.problems = problems;
+    }
+
+    public PlantDepartment(int id, String plant_Department_Description, LocalDateTime created_At, LocalDateTime updated_At, Set<Problem> problems, boolean isActive) {
+
     }
 
     public PlantDepartment(String plant_Department_Description) {
 
     }
 
-    public Integer getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(int id) {
         this.id = id;
     }
 
-    public String getPlantDepartmentDescription() {
+    public String getPlant_Department_Description() {
         return plant_Department_Description;
     }
 
-    public void setPlantDepartmentDescription(String plantDepartmentDescription) {
-        this.plant_Department_Description = plantDepartmentDescription;
+    public void setPlant_Department_Description(String plant_Department_Description) {
+        this.plant_Department_Description = plant_Department_Description;
     }
 
-    public LocalDateTime getCreatedAt() {
+    public LocalDateTime getCreated_At() {
         return created_At;
     }
 
-    public void setCreatedAt(LocalDateTime createdAt) {
-        this.created_At = createdAt;
+    public void setCreated_At(LocalDateTime created_At) {
+        this.created_At = created_At;
     }
 
-    public LocalDateTime getUpdatedAt() {
+    public LocalDateTime getUpdated_At() {
         return updated_At;
     }
 
-    public void setUpdatedAt(LocalDateTime updatedAt) {
-        this.updated_At = updatedAt;
+    public void setUpdated_At(LocalDateTime updated_At) {
+        this.updated_At = updated_At;
+    }
+
+    public boolean isActive() {
+        return isActive;
+    }
+
+    public void setActive(boolean active) {
+        isActive = active;
     }
 
     public Set<Problem> getProblems() {
@@ -94,5 +110,3 @@ public class PlantDepartment {
         this.problems = problems;
     }
 }
-
-

@@ -33,18 +33,35 @@ public class PlantDepartmentServiceImpl implements PlantDepartmentService {
 
     @Override
     public PlantDepartment savePlantDepartment(PlantDepartment plantDepartment) {
-        if (plantDepartment.getId() == null) {
-            plantDepartment.setCreatedAt(LocalDateTime.now());
-        } else {
-            plantDepartment.setUpdatedAt(LocalDateTime.now());
+        if (plantDepartment.getId() == 0) { // Adjusted for auto-generated ID
+            plantDepartment.setCreated_At(LocalDateTime.now());
         }
+        plantDepartment.setUpdated_At(LocalDateTime.now());
         logger.info("Saving plant department: {}", plantDepartment);
         return plantDepartmentRepository.save(plantDepartment);
     }
 
     @Override
-    public void deletePlantDepartment(Integer id) {
-        logger.info("Deleting plant department with id: {}", id);
-        plantDepartmentRepository.deleteById(id);
+    public void deactivatePlantDepartment(Integer id) {
+        logger.info("Deactivating plant department with id: {}", id);
+        PlantDepartment plantDepartment = plantDepartmentRepository.findById(id).orElse(null);
+        if (plantDepartment != null) {
+            plantDepartment.setActive(false);
+            savePlantDepartment(plantDepartment);
+        } else {
+            logger.warn("Plant department with id: {} not found for deactivation", id);
+        }
+    }
+
+    @Override
+    public void activatePlantDepartment(Integer id) {
+        logger.info("Activating plant department with id: {}", id);
+        PlantDepartment plantDepartment = plantDepartmentRepository.findById(id).orElse(null);
+        if (plantDepartment != null) {
+            plantDepartment.setActive(true);
+            savePlantDepartment(plantDepartment);
+        } else {
+            logger.warn("Plant department with id: {} not found for activation", id);
+        }
     }
 }

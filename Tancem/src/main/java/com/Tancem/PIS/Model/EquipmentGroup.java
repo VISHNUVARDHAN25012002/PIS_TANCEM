@@ -18,6 +18,8 @@ public class EquipmentGroup {
 
     private LocalDateTime updated_At;
 
+    private Boolean isActive = true;
+
     @PrePersist
     protected void onCreate() {
         created_At = LocalDateTime.now();
@@ -34,14 +36,20 @@ public class EquipmentGroup {
     @JsonBackReference
     private Set<Equipment> equipmentSet = new HashSet<>();
 
-    public EquipmentGroup(){}
+    public EquipmentGroup() {
+    }
 
-    public EquipmentGroup(Integer id, String equipment_Group, LocalDateTime created_At, LocalDateTime updated_At, Set<Equipment> equipmentSet) {
+    public EquipmentGroup(Integer id, String equipment_Group, LocalDateTime created_At, LocalDateTime updated_At, Boolean isActive, Set<Equipment> equipmentSet) {
         this.id = id;
         this.equipment_Group = equipment_Group;
         this.created_At = created_At;
         this.updated_At = updated_At;
+        this.isActive = isActive;
         this.equipmentSet = equipmentSet;
+    }
+
+    public EquipmentGroup(Integer id, String equipment_Group, LocalDateTime created_At, LocalDateTime updated_At, Set<Equipment> equipmentSet, boolean isActive) {
+
     }
 
     // Getters and Setters
@@ -54,28 +62,36 @@ public class EquipmentGroup {
         this.id = id;
     }
 
-    public String getEquipmentGroup() {
+    public String getEquipment_Group() {
         return equipment_Group;
     }
 
-    public void setEquipmentGroup(String equipmentGroup) {
-        this.equipment_Group = equipmentGroup;
+    public void setEquipment_Group(String equipment_Group) {
+        this.equipment_Group = equipment_Group;
     }
 
-    public LocalDateTime getCreatedAt() {
+    public LocalDateTime getCreated_At() {
         return created_At;
     }
 
-    public void setCreatedAt(LocalDateTime createdAt) {
-        this.created_At = createdAt;
+    public void setCreated_At(LocalDateTime created_At) {
+        this.created_At = created_At;
     }
 
-    public LocalDateTime getUpdatedAt() {
+    public LocalDateTime getUpdated_At() {
         return updated_At;
     }
 
-    public void setUpdatedAt(LocalDateTime updatedAt) {
-        this.updated_At = updatedAt;
+    public void setUpdated_At(LocalDateTime updated_At) {
+        this.updated_At = updated_At;
+    }
+
+    public Boolean getActive() {
+        return isActive;
+    }
+
+    public void setActive(Boolean active) {
+        isActive = active;
     }
 
     public Set<Equipment> getEquipmentSet() {

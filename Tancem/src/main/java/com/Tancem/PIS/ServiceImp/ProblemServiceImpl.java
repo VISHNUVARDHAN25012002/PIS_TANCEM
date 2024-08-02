@@ -36,8 +36,26 @@ public class ProblemServiceImpl implements ProblemService {
     }
 
     @Override
-    public void deleteProblem(Integer id) {
-        logger.info("Deleting problem with id: {}", id);
-        problemRepository.deleteById(id);
+    public void deactivateProblem(Integer id) {
+        logger.info("Deactivating problem with id: {}", id);
+        Problem problem = problemRepository.findById(id).orElse(null);
+        if (problem != null) {
+            problem.setActive(false);
+            saveProblem(problem);
+        } else {
+            logger.warn("Problem with id: {} not found for deactivation", id);
+        }
+    }
+
+    @Override
+    public void activateProblem(Integer id) {
+        logger.info("Activating problem with id: {}", id);
+        Problem problem = problemRepository.findById(id).orElse(null);
+        if (problem != null) {
+            problem.setActive(true);
+            saveProblem(problem);
+        } else {
+            logger.warn("Problem with id: {} not found for activation", id);
+        }
     }
 }

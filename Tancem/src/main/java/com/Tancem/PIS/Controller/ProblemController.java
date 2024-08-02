@@ -50,30 +50,23 @@ public class ProblemController {
 
     @PutMapping("/update/{id}")
     public ResponseEntity<Map<String, Object>> updateProblem(@PathVariable Integer id, @RequestBody Problem problem) {
-        Problem existingProblem = problemService.getProblemById(id);
         Map<String, Object> response = new HashMap<>();
+        Problem existingProblem = problemService.getProblemById(id);
         if (existingProblem != null) {
             problem.setId(id); // Ensure the ID is set for the update
+
+            // Handle activation/deactivation based on the provided data
+            if (problem.isActive()==false) {
+                problem.setActive(true);  // Mark as active
+            } else {
+                problem.setActive(false); // Mark as inactive
+            }
+
             Problem updatedProblem = problemService.saveProblem(problem);
             response.put("statusCode", HttpStatus.OK.value());
             response.put("statusMessage", "Problem successfully updated");
             response.put("data", updatedProblem);
             return new ResponseEntity<>(response, HttpStatus.OK);
-        } else {
-            response.put("statusCode", HttpStatus.NOT_FOUND.value());
-            response.put("statusMessage", "Problem not found");
-            return new ResponseEntity<>(response, HttpStatus.NOT_FOUND);
-        }
-    }
-
-    @DeleteMapping("/delete/{id}")
-    public ResponseEntity<Map<String, Object>> deleteProblem(@PathVariable Integer id) {
-        Map<String, Object> response = new HashMap<>();
-        if (problemService.getProblemById(id) != null) {
-            problemService.deleteProblem(id);
-            response.put("statusCode", HttpStatus.NO_CONTENT.value());
-            response.put("statusMessage", "Problem successfully deleted");
-            return new ResponseEntity<>(response, HttpStatus.NO_CONTENT);
         } else {
             response.put("statusCode", HttpStatus.NOT_FOUND.value());
             response.put("statusMessage", "Problem not found");

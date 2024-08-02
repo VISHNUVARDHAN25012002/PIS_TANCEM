@@ -1,5 +1,6 @@
 package com.Tancem.PIS.config;
 
+
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 public class PasswordEncoderDemo {

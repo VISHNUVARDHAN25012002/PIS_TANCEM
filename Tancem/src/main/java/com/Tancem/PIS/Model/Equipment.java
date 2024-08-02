@@ -19,6 +19,8 @@ public class Equipment {
 
     private LocalDateTime updated_At;
 
+    private boolean isActive = true;
+
     @PrePersist
     protected void onCreate() {
         created_At = LocalDateTime.now();
@@ -41,21 +43,22 @@ public class Equipment {
 
     // Getters and Setters
 
-    public Equipment() {}
+    public Equipment() {
+    }
 
-    public Equipment(Integer id, String equipment_Description, LocalDateTime created_At, LocalDateTime updated_At, EquipmentGroup equipmentGroup, Set<SubEquipment> subEquipments) {
+    public Equipment(Integer id, String equipment_Description, LocalDateTime created_At, LocalDateTime updated_At, boolean isActive, EquipmentGroup equipmentGroup, Set<SubEquipment> subEquipments) {
         this.id = id;
         this.equipment_Description = equipment_Description;
         this.created_At = created_At;
         this.updated_At = updated_At;
+        this.isActive = isActive;
         this.equipmentGroup = equipmentGroup;
         this.subEquipments = subEquipments;
     }
 
-    public Equipment(Integer id, String equipment_Description, LocalDateTime created_At, LocalDateTime updated_At) {
+    public Equipment(Integer id, String equipment_Description, LocalDateTime created_At, LocalDateTime updated_At, boolean isActive) {
 
     }
-
 
     public Integer getId() {
         return id;
@@ -65,28 +68,36 @@ public class Equipment {
         this.id = id;
     }
 
-    public String getEquipmentDescription() {
+    public String getEquipment_Description() {
         return equipment_Description;
     }
 
-    public void setEquipmentDescription(String equipmentDescription) {
-        this.equipment_Description = equipmentDescription;
+    public void setEquipment_Description(String equipment_Description) {
+        this.equipment_Description = equipment_Description;
     }
 
-    public LocalDateTime getCreatedAt() {
+    public LocalDateTime getCreated_At() {
         return created_At;
     }
 
-    public void setCreatedAt(LocalDateTime createdAt) {
-        this.created_At = createdAt;
+    public void setCreated_At(LocalDateTime created_At) {
+        this.created_At = created_At;
     }
 
-    public LocalDateTime getUpdatedAt() {
+    public LocalDateTime getUpdated_At() {
         return updated_At;
     }
 
-    public void setUpdatedAt(LocalDateTime updatedAt) {
-        this.updated_At = updatedAt;
+    public void setUpdated_At(LocalDateTime updated_At) {
+        this.updated_At = updated_At;
+    }
+
+    public boolean isActive() {
+        return isActive;
+    }
+
+    public void setActive(boolean active) {
+        isActive = active;
     }
 
     public EquipmentGroup getEquipmentGroup() {

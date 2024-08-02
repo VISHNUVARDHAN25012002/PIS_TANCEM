@@ -35,21 +35,35 @@ public class EquipmentServiceImpl implements EquipmentService {
     @Override
     public Equipment saveEquipment(Equipment equipment) {
         if (equipment.getId() == null) {
-            equipment.setCreatedAt(LocalDateTime.now());
+            equipment.setCreated_At(LocalDateTime.now());
         } else {
-            equipment.setUpdatedAt(LocalDateTime.now());
+            equipment.setUpdated_At(LocalDateTime.now());
         }
         logger.info("Saving equipment: {}", equipment);
         return equipmentRepository.save(equipment);
     }
 
     @Override
-    public void deleteEquipment(Integer id) {
-        logger.info("Deleting equipment with id: {}", id);
-        if (equipmentRepository.existsById(id)) {
-            equipmentRepository.deleteById(id);
+    public void deactivateEquipment(Integer id) {
+        Equipment equipment = getEquipmentById(id);
+        if (equipment != null) {
+            logger.info("Deactivating equipment with ID: {}", id);
+            equipment.setActive(false);
+            equipmentRepository.save(equipment);
         } else {
-            throw new EntityNotFoundException("Equipment not found with id: " + id);
+            logger.warn("Equipment with ID: {} not found, cannot deactivate", id);
+        }
+    }
+
+    @Override
+    public void activateEquipment(Integer id) {
+        Equipment equipment = getEquipmentById(id);
+        if (equipment != null) {
+            logger.info("Activating equipment with ID: {}", id);
+            equipment.setActive(true);
+            equipmentRepository.save(equipment);
+        } else {
+            logger.warn("Equipment with ID: {} not found, cannot activate", id);
         }
     }
 }

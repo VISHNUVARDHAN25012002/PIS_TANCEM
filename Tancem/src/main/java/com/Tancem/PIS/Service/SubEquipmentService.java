@@ -9,6 +9,7 @@ public interface SubEquipmentService {
     List<SubEquipment> getAllSubEquipments();
     SubEquipment getSubEquipmentById(Integer id);
     SubEquipment saveSubEquipment(SubEquipment subEquipment);
-    void deleteSubEquipment(Integer id);
+    void deactivateSubEquipment(Integer id);
+    void activateSubEquipment(Integer id);
 }
 

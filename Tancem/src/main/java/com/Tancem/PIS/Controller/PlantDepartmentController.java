@@ -58,28 +58,20 @@ public class PlantDepartmentController {
     @PutMapping("/update/{id}")
     public ResponseEntity<Map<String, Object>> updatePlantDepartment(@PathVariable Integer id, @RequestBody PlantDepartment plantDepartment) {
         Map<String, Object> response = new HashMap<>();
-        if (plantDepartmentService.getPlantDepartmentById(id) != null) {
+        PlantDepartment existingPlantDepartment = plantDepartmentService.getPlantDepartmentById(id);
+        if (existingPlantDepartment != null) {
             plantDepartment.setId(id);
+            // Handle activation/deactivation based on the provided data
+            if (plantDepartment.isActive()==false) {
+                plantDepartment.setActive(true);  // Mark as active
+            } else {
+                plantDepartment.setActive(false); // Mark as inactive
+            }
             PlantDepartment updatedPlantDepartment = plantDepartmentService.savePlantDepartment(plantDepartment);
             response.put("statusCode", HttpStatus.OK.value());
             response.put("statusMessage", "Plant department successfully updated");
             response.put("data", updatedPlantDepartment);
             return new ResponseEntity<>(response, HttpStatus.OK);
-        } else {
-            response.put("statusCode", HttpStatus.NOT_FOUND.value());
-            response.put("statusMessage", "Plant department not found");
-            return new ResponseEntity<>(response, HttpStatus.NOT_FOUND);
-        }
-    }
-
-    @DeleteMapping("/delete/{id}")
-    public ResponseEntity<Map<String, Object>> deletePlantDepartment(@PathVariable Integer id) {
-        Map<String, Object> response = new HashMap<>();
-        if (plantDepartmentService.getPlantDepartmentById(id) != null) {
-            plantDepartmentService.deletePlantDepartment(id);
-            response.put("statusCode", HttpStatus.NO_CONTENT.value());
-            response.put("statusMessage", "Plant department successfully deleted");
-            return new ResponseEntity<>(response, HttpStatus.NO_CONTENT);
         } else {
             response.put("statusCode", HttpStatus.NOT_FOUND.value());
             response.put("statusMessage", "Plant department not found");

@@ -51,12 +51,6 @@ public class EquipmentController {
 
     @PostMapping("/create")
     public ResponseEntity<Map<String, Object>> createEquipment(@RequestBody Equipment equipment) {
-        if (equipment.getEquipmentGroup() != null && equipment.getEquipmentGroup().getId() != null) {
-            EquipmentGroup equipmentGroup = equipmentGroupService.findById(equipment.getEquipmentGroup().getId());
-            if (equipmentGroup != null) {
-                equipment.setEquipmentGroup(equipmentGroup);
-            }
-        }
         Equipment newEquipment = equipmentService.saveEquipment(equipment);
         Map<String, Object> response = new HashMap<>();
         response.put("statusCode", HttpStatus.CREATED.value());
@@ -76,11 +70,21 @@ public class EquipmentController {
                 }
             }
             equipment.setId(id);
+
+            // Set isActive field based on the provided equipment status
+            if (equipment.isActive() == false) {
+                // If the equipment is being deactivated
+                equipment.setActive(true);
+            } else {
+                // If the equipment is being activated
+                equipment.setActive(false);
+            }
+
             Equipment updatedEquipment = equipmentService.saveEquipment(equipment);
             Map<String, Object> response = new HashMap<>();
             response.put("statusCode", HttpStatus.OK.value());
             response.put("statusMessage", "Equipment successfully updated");
-             response.put("data", updatedEquipment);
+            response.put("data", updatedEquipment);
             return new ResponseEntity<>(response, HttpStatus.OK);
         } else {
             Map<String, Object> response = new HashMap<>();
@@ -88,15 +92,5 @@ public class EquipmentController {
             response.put("statusMessage", "Equipment not found");
             return new ResponseEntity<>(response, HttpStatus.NOT_FOUND);
         }
-    }
-
-    @DeleteMapping("/delete/{id}")
-    public ResponseEntity<Map<String, Object>> deleteEquipment(@PathVariable Integer id) {
-        equipmentService.deleteEquipment(id);
-        Map<String, Object> response = new HashMap<>();
-        response.put("statusCode", HttpStatus.NO_CONTENT.value());
-        response.put("statusMessage", "Equipment successfully deleted");
-        response.put("data", null);
-        return new ResponseEntity<>(response, HttpStatus.NO_CONTENT);
     }
 }

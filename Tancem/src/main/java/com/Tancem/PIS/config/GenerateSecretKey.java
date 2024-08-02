@@ -2,12 +2,14 @@ package com.Tancem.PIS.config;
 
 import io.jsonwebtoken.SignatureAlgorithm;
 import io.jsonwebtoken.security.Keys;
+
+import javax.crypto.SecretKey;
 import java.util.Base64;
 
 public class GenerateSecretKey {
     public static void main(String[] args) {
-        byte[] key = Keys.secretKeyFor(SignatureAlgorithm.HS256).getEncoded();
-        String base64Key = Base64.getEncoder().encodeToString(key);
+        SecretKey key = Keys.secretKeyFor(SignatureAlgorithm.HS256);
+        String base64Key = Base64.getEncoder().encodeToString(key.getEncoded());
         System.out.println("Base64-encoded secret key: " + base64Key);
     }
 }

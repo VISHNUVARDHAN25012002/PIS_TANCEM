@@ -34,18 +34,39 @@ public class SubEquipmentServiceImpl implements SubEquipmentService {
 
     @Override
     public SubEquipment saveSubEquipment(SubEquipment subEquipment) {
-        if (subEquipment.getId() == null) {
-            subEquipment.setCreatedAt(LocalDateTime.now());
+        if (subEquipment.getId() == 0) {
+            subEquipment.setCreated_At(LocalDateTime.now());
         } else {
-            subEquipment.setUpdatedAt(LocalDateTime.now());
+            subEquipment.setUpdated_At(LocalDateTime.now());
         }
         logger.info("Saving sub-equipment: {}", subEquipment);
         return subEquipmentRepository.save(subEquipment);
     }
 
+
     @Override
-    public void deleteSubEquipment(Integer id) {
-        logger.info("Deleting sub-equipment with id: {}", id);
-        subEquipmentRepository.deleteById(id);
+    public void deactivateSubEquipment(Integer id) {
+        SubEquipment subEquipment = getSubEquipmentById(id);
+        if (subEquipment != null) {
+            subEquipment.setActive(false);
+            subEquipment.setUpdated_At(LocalDateTime.now());
+            subEquipmentRepository.save(subEquipment);
+            logger.info("Deactivated sub-equipment with id: {}", id);
+        } else {
+            logger.warn("Sub-equipment with id: {} not found for deactivation", id);
+        }
+    }
+
+    @Override
+    public void activateSubEquipment(Integer id) {
+        SubEquipment subEquipment = getSubEquipmentById(id);
+        if (subEquipment != null) {
+            subEquipment.setActive(true);
+            subEquipment.setUpdated_At(LocalDateTime.now());
+            subEquipmentRepository.save(subEquipment);
+            logger.info("Activated sub-equipment with id: {}", id);
+        } else {
+            logger.warn("Sub-equipment with id: {} not found for activation", id);
+        }
     }
 }

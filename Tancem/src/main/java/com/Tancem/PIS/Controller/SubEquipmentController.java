@@ -33,10 +33,10 @@ public class SubEquipmentController {
         SubEquipment subEquipment = subEquipmentService.getSubEquipmentById(id);
         Map<String, Object> response = new HashMap<>();
         if (subEquipment != null) {
-        response.put("statusCode", HttpStatus.OK.value());
-        response.put("statusMessage", "Success");
-        response.put("data", subEquipment);
-        return new ResponseEntity<>(response, HttpStatus.OK);
+            response.put("statusCode", HttpStatus.OK.value());
+            response.put("statusMessage", "Success");
+            response.put("data", subEquipment);
+            return new ResponseEntity<>(response, HttpStatus.OK);
         } else {
             response.put("statusCode", HttpStatus.NOT_FOUND.value());
             response.put("statusMessage", "sub_Equipment not found");
@@ -54,31 +54,48 @@ public class SubEquipmentController {
         return new ResponseEntity<>(response, HttpStatus.CREATED);
     }
 
+//    @PutMapping("/update/{id}")
+//    public ResponseEntity<Map<String, Object>> updateSubEquipment(@PathVariable Integer id, @RequestBody SubEquipment subEquipment) {
+//        Map<String, Object> response = new HashMap<>();
+//        SubEquipment existingSubEquipment = subEquipmentService.getSubEquipmentById(id);
+//        if (existingSubEquipment != null) {
+//            subEquipment.setId(id);
+//
+//            // Handle activation and deactivation logic
+//            if (subEquipment.isActive()==false) {
+//                subEquipment.setActive(true);
+//            } else {
+//                subEquipment.setActive(false);
+//            }
+//
+//            SubEquipment updatedSubEquipment = subEquipmentService.saveSubEquipment(subEquipment);
+//            response.put("statusCode", HttpStatus.OK.value());
+//            response.put("statusMessage", "Sub-equipment successfully updated");
+//            response.put("data", updatedSubEquipment);
+//            return new ResponseEntity<>(response, HttpStatus.OK);
+//        } else {
+//            response.put("statusCode", HttpStatus.NOT_FOUND.value());
+//            response.put("statusMessage", "Sub-equipment not found");
+//            return new ResponseEntity<>(response, HttpStatus.NOT_FOUND);
+//        }
+//    }
+//}
+
     @PutMapping("/update/{id}")
     public ResponseEntity<Map<String, Object>> updateSubEquipment(@PathVariable Integer id, @RequestBody SubEquipment subEquipment) {
         Map<String, Object> response = new HashMap<>();
-        if (subEquipmentService.getSubEquipmentById(id) != null) {
+        SubEquipment existingSubEquipment = subEquipmentService.getSubEquipmentById(id);
+        if (existingSubEquipment != null) {
             subEquipment.setId(id);
+
+            // Handle activation and deactivation logic
+            subEquipment.setActive(!existingSubEquipment.isActive());
+
             SubEquipment updatedSubEquipment = subEquipmentService.saveSubEquipment(subEquipment);
             response.put("statusCode", HttpStatus.OK.value());
             response.put("statusMessage", "Sub-equipment successfully updated");
             response.put("data", updatedSubEquipment);
             return new ResponseEntity<>(response, HttpStatus.OK);
-        } else {
-            response.put("statusCode", HttpStatus.NOT_FOUND.value());
-            response.put("statusMessage", "Sub-equipment not found");
-            return new ResponseEntity<>(response, HttpStatus.NOT_FOUND);
-        }
-    }
-
-    @DeleteMapping("/delete/{id}")
-    public ResponseEntity<Map<String, Object>> deleteSubEquipment(@PathVariable Integer id) {
-        Map<String, Object> response = new HashMap<>();
-        if (subEquipmentService.getSubEquipmentById(id) != null) {
-            subEquipmentService.deleteSubEquipment(id);
-            response.put("statusCode", HttpStatus.NO_CONTENT.value());
-            response.put("statusMessage", "Sub-equipment successfully deleted");
-            return new ResponseEntity<>(response, HttpStatus.NO_CONTENT);
         } else {
             response.put("statusCode", HttpStatus.NOT_FOUND.value());
             response.put("statusMessage", "Sub-equipment not found");

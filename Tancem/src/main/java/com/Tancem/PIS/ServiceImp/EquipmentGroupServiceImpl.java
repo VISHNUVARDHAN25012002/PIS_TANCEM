@@ -33,18 +33,37 @@ public class EquipmentGroupServiceImpl implements EquipmentGroupService {
     @Override
     public EquipmentGroup save(EquipmentGroup equipmentGroup) {
         if (equipmentGroup.getId() == null) {
-            equipmentGroup.setCreatedAt(LocalDateTime.now());
+            equipmentGroup.setCreated_At(LocalDateTime.now());
         } else {
-            equipmentGroup.setUpdatedAt(LocalDateTime.now());
+            equipmentGroup.setUpdated_At(LocalDateTime.now());
         }
         logger.info("Saving equipment group: {}", equipmentGroup);
         return repository.save(equipmentGroup);
     }
 
     @Override
-    public void deleteById(Integer id) {
-        logger.info("Deleting equipment group with id: {}", id);
-        repository.deleteById(id);
+    public void deactivate(Integer id) {
+        EquipmentGroup equipmentGroup = findById(id);
+        if (equipmentGroup != null) {
+            equipmentGroup.setActive(false);
+            equipmentGroup.setUpdated_At(LocalDateTime.now());
+            repository.save(equipmentGroup);
+            logger.info("Deactivated equipment group with id: {}", id);
+        } else {
+            logger.warn("Equipment group with id: {} not found for deactivation", id);
+        }
+    }
+
+    @Override
+    public void activate(Integer id) {
+        EquipmentGroup equipmentGroup = findById(id);
+        if (equipmentGroup != null) {
+            equipmentGroup.setActive(true);
+            equipmentGroup.setUpdated_At(LocalDateTime.now());
+            repository.save(equipmentGroup);
+            logger.info("Activated equipment group with id: {}", id);
+        } else {
+            logger.warn("Equipment group with id: {} not found for activation", id);
+        }
     }
 }
-

@@ -9,7 +9,8 @@ public interface EquipmentGroupService {
     List<EquipmentGroup> findAll();
     EquipmentGroup findById(Integer id);
     EquipmentGroup save(EquipmentGroup equipmentGroup);
-    void deleteById(Integer id);
+    void deactivate(Integer id);
+    void activate(Integer id);
 }
 
 

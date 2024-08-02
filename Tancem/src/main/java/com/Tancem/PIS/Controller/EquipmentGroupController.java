@@ -58,28 +58,24 @@ public class EquipmentGroupController {
     @PutMapping("/update/{id}")
     public ResponseEntity<Map<String, Object>> update(@PathVariable Integer id, @RequestBody EquipmentGroup equipmentGroup) {
         Map<String, Object> response = new HashMap<>();
-        if (service.findById(id) != null) {
+        EquipmentGroup existingGroup = service.findById(id);
+        if (existingGroup != null) {
             equipmentGroup.setId(id);
+
+            // Handle activation and deactivation logic
+            if (Boolean.FALSE.equals(equipmentGroup.getActive())) {
+                // If the equipment group is being deactivated, set isActive to false
+                equipmentGroup.setActive(true);
+            } else {
+                // If the equipment group is being activated, set isActive to true
+                equipmentGroup.setActive(false);
+            }
+
             EquipmentGroup updatedEquipmentGroup = service.save(equipmentGroup);
             response.put("statusCode", HttpStatus.OK.value());
             response.put("statusMessage", "Equipment group successfully updated");
             response.put("data", updatedEquipmentGroup);
             return new ResponseEntity<>(response, HttpStatus.OK);
-        } else {
-            response.put("statusCode", HttpStatus.NOT_FOUND.value());
-            response.put("statusMessage", "Equipment group not found");
-            return new ResponseEntity<>(response, HttpStatus.NOT_FOUND);
-        }
-    }
-
-    @DeleteMapping("/delete/{id}")
-    public ResponseEntity<Map<String, Object>> delete(@PathVariable Integer id) {
-        Map<String, Object> response = new HashMap<>();
-        if (service.findById(id) != null) {
-            service.deleteById(id);
-            response.put("statusCode", HttpStatus.NO_CONTENT.value());
-            response.put("statusMessage", "Equipment group successfully deleted");
-            return new ResponseEntity<>(response, HttpStatus.NO_CONTENT);
         } else {
             response.put("statusCode", HttpStatus.NOT_FOUND.value());
             response.put("statusMessage", "Equipment group not found");

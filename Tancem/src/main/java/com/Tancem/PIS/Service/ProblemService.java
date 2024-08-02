@@ -9,5 +9,6 @@ public interface ProblemService {
     List<Problem> getAllProblems();
     Problem getProblemById(Integer id);
     Problem saveProblem(Problem problem);
-    void deleteProblem(Integer id);
+    void deactivateProblem(Integer id);
+    void activateProblem(Integer id);
 }
