@@ -36,7 +36,9 @@ public class LabAnalysisServiceImpl implements LabAnalysisService {
     }
 
     @Override
-    public void deleteLabAnalysis(int id) {
-        labAnalysisRepository.deleteById(id);
+    public void toggleActiveState(int id) {
+        LabAnalysis labAnalysis = labAnalysisRepository.findById(id).orElseThrow(() -> new RuntimeException("Lab Analysis not found"));
+        labAnalysis.setIsActive(!labAnalysis.isActive());
+        labAnalysisRepository.save(labAnalysis);
     }
 }

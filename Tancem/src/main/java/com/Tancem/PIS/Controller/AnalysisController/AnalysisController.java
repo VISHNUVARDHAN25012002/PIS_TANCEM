@@ -2,6 +2,7 @@ package com.Tancem.PIS.Controller.AnalysisController;
 
 import com.Tancem.PIS.Model.AnalysisModel.Analysis;
 import com.Tancem.PIS.Service.AnalysisService.AnalysisService;
+import com.Tancem.PIS.Service.logService.LogService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -19,9 +20,13 @@ import org.slf4j.LoggerFactory;
 @RestController
 @RequestMapping("/api/analysis")
 public class AnalysisController {
+//LOG
+@Autowired
+private LogService logService;
 
     @Autowired
     private AnalysisService analysisService;
+
 
     private static final Logger logger = LoggerFactory.getLogger(AnalysisController.class);
 

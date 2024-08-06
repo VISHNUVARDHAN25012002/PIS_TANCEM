@@ -4,6 +4,7 @@ import com.Tancem.PIS.DTO.ErrorResponse;
 import com.Tancem.PIS.Exceptions.CustomException;
 import com.Tancem.PIS.Model.Material.Material;
 import com.Tancem.PIS.Service.Material_Service.MaterialService;
+import com.Tancem.PIS.Service.logService.LogService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,6 +21,10 @@ public class MaterialController {
 
     @Autowired
     private MaterialService materialService;
+
+    //LOG
+    @Autowired
+    private LogService logService;
 
     @GetMapping
     public ResponseEntity<?> getAllMaterials() {

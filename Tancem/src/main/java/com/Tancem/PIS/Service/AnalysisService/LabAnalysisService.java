@@ -9,5 +9,5 @@ public interface LabAnalysisService {
     List<LabAnalysis> getAllLabAnalyses();
     LabAnalysis getLabAnalysisById(int id);
     LabAnalysis updateLabAnalysis(LabAnalysis labAnalysis);
-    void deleteLabAnalysis(int id);
+    void toggleActiveState(int id);
 }

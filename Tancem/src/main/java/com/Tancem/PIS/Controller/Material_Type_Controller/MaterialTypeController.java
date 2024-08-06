@@ -6,6 +6,7 @@ import com.Tancem.PIS.Exceptions.CustomException;
 import com.Tancem.PIS.Model.Material_Type.Material_Type;
 
 import com.Tancem.PIS.Service.Material_Type_Service.MaterialTypeService;
+import com.Tancem.PIS.Service.logService.LogService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,6 +20,9 @@ import java.util.List;
 @RequestMapping("/tancem/pis/materialTypes")
 public class MaterialTypeController {
     private static final Logger logger = LoggerFactory.getLogger(MaterialTypeController.class);
+    //LOG
+    @Autowired
+    private LogService logService;
 
     @Autowired
     private MaterialTypeService materialTypeService;

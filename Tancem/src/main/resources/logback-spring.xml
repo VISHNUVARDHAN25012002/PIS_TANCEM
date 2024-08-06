@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+
+    <!-- Console Appender -->
+    <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%d{yyyy-MM-dd HH:mm:ss} - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <!-- API Log Appender -->
+    <appender name="API_LOG" class="ch.qos.logback.core.FileAppender">
+        <file>logs/api.log</file>
+        <append>true</append>
+        <encoder>
+            <pattern>%d{yyyy-MM-dd HH:mm:ss} - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <!-- Error Log Appender -->
+    <appender name="ERROR_LOG" class="ch.qos.logback.core.FileAppender">
+        <file>logs/error.log</file>
+        <append>true</append>
+        <encoder>
+            <pattern>%d{yyyy-MM-dd HH:mm:ss} - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <!-- Exception Log Appender -->
+    <appender name="EXCEPTION_LOG" class="ch.qos.logback.core.FileAppender">
+        <file>logs/exception.log</file>
+        <append>true</append>
+        <encoder>
+            <pattern>%d{yyyy-MM-dd HH:mm:ss} - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <!-- DB Log Appender -->
+    <appender name="DB_LOG" class="ch.qos.logback.core.FileAppender">
+        <file>logs/db.log</file>
+        <append>true</append>
+        <encoder>
+            <pattern>%d{yyyy-MM-dd HH:mm:ss} - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <!-- Loggers -->
+    <logger name="com.Tancem.PIS.Service.logService.api" level="INFO" additivity="false">
+        <appender-ref ref="API_LOG"/>
+    </logger>
+
+    <logger name="com.Tancem.PIS.Service.logService.error" level="ERROR" additivity="false">
+        <appender-ref ref="ERROR_LOG"/>
+    </logger>
+
+    <logger name="com.Tancem.PIS.Service.logService.exception" level="ERROR" additivity="false">
+        <appender-ref ref="EXCEPTION_LOG"/>
+    </logger>
+
+    <logger name="com.Tancem.PIS.Service.logService.db" level="INFO" additivity="false">
+        <appender-ref ref="DB_LOG"/>
+    </logger>
+
+    <!-- Root Logger -->
+    <root level="INFO">
+        <appender-ref ref="CONSOLE"/>
+    </root>
+
+</configuration>

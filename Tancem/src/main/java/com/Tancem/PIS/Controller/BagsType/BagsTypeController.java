@@ -3,6 +3,7 @@ import com.Tancem.PIS.Exceptions.ResourceNotFoundException;
 
 import  com.Tancem.PIS.Model.BagsType;
 import com.Tancem.PIS.Service.BagsType.BagsTypeService;
+import com.Tancem.PIS.Service.logService.LogService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -14,6 +15,10 @@ import java.util.Map;
 @RestController
 @RequestMapping("tancem/pis/BagsTypeController")
 public class BagsTypeController {
+    //LOG
+    @Autowired
+    private LogService logService;
+
     @Autowired
     private BagsTypeService bagsTypeService;
 

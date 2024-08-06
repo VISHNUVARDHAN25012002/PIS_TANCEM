@@ -5,6 +5,7 @@ import com.Tancem.PIS.Exceptions.CustomException;
 
 import com.Tancem.PIS.Model.Status.Status;
 import com.Tancem.PIS.Service.Status_Service.StatusService;
+import com.Tancem.PIS.Service.logService.LogService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,6 +19,9 @@ import java.util.List;
 @RequestMapping("/tancem/pis/status")
 public class StatusController {
     private static final Logger logger = LoggerFactory.getLogger(StatusController.class);
+    //LOG
+    @Autowired
+    private LogService logService;
 
     @Autowired
     private StatusService statusService;

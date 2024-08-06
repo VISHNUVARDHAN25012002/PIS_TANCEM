@@ -1,25 +1,25 @@
 package com.Tancem.PIS.Model.AnalysisModel;
 
+import jakarta.persistence.*;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import lombok.AllArgsConstructor;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedDate;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
-import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-
 import java.sql.Date;
 import java.sql.Timestamp;
 
 @Entity
+@Table(name = "lab_analysis")
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Table(name = "lab_analysis")
 @EntityListeners(AuditingEntityListener.class)
 public class LabAnalysis {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "lab_analysis_id_seq")
+    @SequenceGenerator(name = "lab_analysis_id_seq", sequenceName = "lab_analysis_id_seq", allocationSize = 1)
     private int id;
 
     @Column(name = "transaction_date")
@@ -33,8 +33,14 @@ public class LabAnalysis {
     @Column(name = "updated_at")
     private Timestamp updatedAt;
 
-    @ManyToOne
-    @JoinColumn(name = "analysis_id", referencedColumnName = "id")
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "analysis_id", referencedColumnName = "id", nullable = false)
     private Analysis analysis;
 
+    @Column(name = "is_active", nullable = false)
+    private boolean isActive = true;
+
+    public void setIsActive(boolean isActive) {
+        this.isActive = isActive;
+    }
 }

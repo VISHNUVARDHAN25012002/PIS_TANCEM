@@ -7,7 +7,6 @@ import lombok.NoArgsConstructor;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedDate;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
-
 import java.sql.Timestamp;
 
 @Entity
@@ -18,7 +17,8 @@ import java.sql.Timestamp;
 @EntityListeners(AuditingEntityListener.class)
 public class Analysis {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "analysis_id_seq")
+    @SequenceGenerator(name = "analysis_id_seq", sequenceName = "analysis_id_seq", allocationSize = 1)
     private int id;
 
     private String analysisType;
@@ -34,7 +34,4 @@ public class Analysis {
     @LastModifiedDate
     @Column(name = "updated_at")
     private Timestamp updatedAt;
-
-    // Lombok will automatically generate the getters and setters if @Data is used
-    // No need for a manual setIsActive method
 }

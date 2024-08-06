@@ -13,5 +13,4 @@ public class PisApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(PisApplication.class, args);
 	}
-
 }

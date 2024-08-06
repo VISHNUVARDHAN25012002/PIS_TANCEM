@@ -5,6 +5,7 @@ import com.Tancem.PIS.Exceptions.CustomException;
 import com.Tancem.PIS.Model.Source.Source;
 
 import com.Tancem.PIS.Service.Source_Service.SourceService;
+import com.Tancem.PIS.Service.logService.LogService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,6 +19,9 @@ import java.util.List;
 @RequestMapping("/tancem/pis/sources")
 public class SourceController {
     private static final Logger logger = LoggerFactory.getLogger(SourceController.class);
+    //LOG
+    @Autowired
+    private LogService logService;
 
     @Autowired
     private SourceService sourceService;

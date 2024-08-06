@@ -4,8 +4,7 @@ import com.Tancem.PIS.Exceptions.ResourceNotFoundException;
 
 import com.Tancem.PIS.Model.BagsConsumption;
 import com.Tancem.PIS.Service.BagsConsumption.BagsConsumptionService;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import com.Tancem.PIS.Service.logService.LogService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -17,8 +16,11 @@ import java.util.Map;
 @RestController
 @RequestMapping("tancem/pis/BagsConsumptionController")
 public class BagsConsumptionController {
+    //LOG
+    @Autowired
+    private LogService logService;
 
-    private static final Logger logger = LoggerFactory.getLogger(BagsConsumptionController.class);
+
 
     @Autowired
     private BagsConsumptionService bagsConsumptionService;

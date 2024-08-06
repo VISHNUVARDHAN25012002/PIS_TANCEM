@@ -3,6 +3,7 @@ package com.Tancem.PIS.Controller.AnalysisController;
 import com.Tancem.PIS.Model.AnalysisModel.LabAnalysis;
 
 import com.Tancem.PIS.Service.AnalysisService.LabAnalysisService;
+import com.Tancem.PIS.Service.logService.LogService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -20,6 +21,10 @@ import java.util.Map;
 @RestController
 @RequestMapping("/api/lab-analysis")
 public class LabAnalysisController {
+    //LOG
+    @Autowired
+    private LogService logService;
+
 
     @Autowired
     private LabAnalysisService labAnalysisService;
@@ -64,39 +69,29 @@ public class LabAnalysisController {
         return ResponseEntity.ok(response);
     }
 
-    @PutMapping("/{id}")
-    public ResponseEntity<Map<String, Object>> updateLabAnalysis(@PathVariable int id, @RequestBody LabAnalysis labAnalysis) {
+    @PutMapping("/deactivates/{id}")
+    public ResponseEntity<Map<String, Object>> toggleActive(@PathVariable int id) {
         Map<String, Object> response = new HashMap<>();
         try {
-            labAnalysis.setId(id);
-            LabAnalysis updatedLabAnalysis = labAnalysisService.updateLabAnalysis(labAnalysis);
-            response.put("status", HttpStatus.OK.value());
-            response.put("message", "Lab Analysis updated successfully");
-            response.put("data", updatedLabAnalysis);
-            logUserAction("update", id);
+            LabAnalysis labAnalysis = labAnalysisService.getLabAnalysisById(id);
+            if (labAnalysis != null) {
+                labAnalysis.setIsActive(!labAnalysis.isActive());
+                labAnalysisService.updateLabAnalysis(labAnalysis);
+                response.put("status", HttpStatus.OK.value());
+                response.put("message", "Lab Analysis active state toggled successfully");
+                response.put("data", labAnalysis);
+            } else {
+                response.put("status", HttpStatus.NOT_FOUND.value());
+                response.put("message", "Lab Analysis not found");
+            }
         } catch (Exception e) {
-            logger.error("Error updating Lab Analysis with id {}: {}", id, e.getMessage());
+            logger.error("Error toggling active state for Lab Analysis with id {}: {}", id, e.getMessage());
             response.put("status", HttpStatus.INTERNAL_SERVER_ERROR.value());
-            response.put("message", "Error updating Lab Analysis");
+            response.put("message", "Error toggling active state for Lab Analysis: " + e.getMessage());
         }
         return ResponseEntity.ok(response);
     }
 
-    @DeleteMapping("/{id}")
-    public ResponseEntity<Map<String, Object>> deleteLabAnalysis(@PathVariable int id) {
-        Map<String, Object> response = new HashMap<>();
-        try {
-            labAnalysisService.deleteLabAnalysis(id);
-            response.put("status", HttpStatus.NO_CONTENT.value());
-            response.put("message", "Lab Analysis deleted successfully");
-            logUserAction("delete", id);
-        } catch (Exception e) {
-            logger.error("Error deleting Lab Analysis with id {}: {}", id, e.getMessage());
-            response.put("status", HttpStatus.INTERNAL_SERVER_ERROR.value());
-            response.put("message", "Error deleting Lab Analysis");
-        }
-        return ResponseEntity.ok(response);
-    }
 
     private void logUserAction(String action, int id) {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
