@@ -12,18 +12,18 @@ public class LogService {
     private static final Logger dbLogger = LoggerFactory.getLogger("com.Tancem.PIS.Service.logService.db");
 
     public void logApiCall(String message) {
-        apiLogger.info("API Call: " + message);
+        apiLogger.info("API Call: {}", message);
     }
 
     public void logError(String message) {
-        errorLogger.error("Error: " + message);
+        errorLogger.error("Error: {}", message);
     }
 
     public void logException(Exception e) {
-        exceptionLogger.error("Exception: " + e.getMessage(), e);
+        exceptionLogger.error("Exception: {}", e.getMessage(), e);
     }
 
     public void logDbOperation(String message) {
-        dbLogger.info("DB Operation: " + message);
+        dbLogger.info("DB Operation: {}", message);
     }
 }

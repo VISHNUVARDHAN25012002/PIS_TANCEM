@@ -3,6 +3,7 @@ package com.Tancem.PIS.ServiceImpl.AnalysisServiceImpl;
 import com.Tancem.PIS.Model.AnalysisModel.Analysis;
 import com.Tancem.PIS.Repository.AnalysisRepository.AnalysisRepository;
 import com.Tancem.PIS.Service.AnalysisService.AnalysisService;
+import com.Tancem.PIS.Service.logService.LogService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -15,24 +16,39 @@ public class AnalysisServiceImpl implements AnalysisService {
     @Autowired
     private AnalysisRepository analysisRepository;
 
+    @Autowired
+    private LogService logService;
+
     @Override
     public Analysis saveAnalysis(Analysis analysis) {
-        return analysisRepository.save(analysis);
+        Analysis savedAnalysis = analysisRepository.save(analysis);
+        logService.logDbOperation("Saved analysis with ID: " + savedAnalysis.getId());
+        return savedAnalysis;
     }
 
     @Override
     public List<Analysis> getAllAnalyses() {
-        return analysisRepository.findAll(); // You may want to filter for active analyses here
+        List<Analysis> analyses = analysisRepository.findAll();
+        logService.logDbOperation("Fetched all analyses");
+        return analyses;
     }
 
     @Override
     public Analysis getAnalysisById(int id) {
-        return analysisRepository.findById(id).orElse(null);
+        Analysis analysis = analysisRepository.findById(id).orElse(null);
+        if (analysis != null) {
+            logService.logDbOperation("Fetched analysis with ID: " + id);
+        } else {
+            logService.logDbOperation("Analysis with ID: " + id + " not found");
+        }
+        return analysis;
     }
 
     @Override
     public Analysis updateAnalysis(Analysis analysis) {
-        return analysisRepository.save(analysis);
+        Analysis updatedAnalysis = analysisRepository.save(analysis);
+        logService.logDbOperation("Updated analysis with ID: " + updatedAnalysis.getId());
+        return updatedAnalysis;
     }
 
     @Override
@@ -40,10 +56,11 @@ public class AnalysisServiceImpl implements AnalysisService {
         Optional<Analysis> analysisOpt = analysisRepository.findById(id);
         if (analysisOpt.isPresent()) {
             Analysis analysis = analysisOpt.get();
-            analysis.setActive(false);  // Correct method call
+            analysis.setActive(false);
             analysisRepository.save(analysis);
+            logService.logDbOperation("Deactivated analysis with ID: " + id);
+        } else {
+            logService.logDbOperation("Analysis with ID: " + id + " not found for deactivation");
         }
     }
-
 }
-

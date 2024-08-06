@@ -14,21 +14,15 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 @RestController
 @RequestMapping("/api/analysis")
 public class AnalysisController {
-//LOG
-@Autowired
-private LogService logService;
+
+    @Autowired
+    private LogService logService;
 
     @Autowired
     private AnalysisService analysisService;
-
-
-    private static final Logger logger = LoggerFactory.getLogger(AnalysisController.class);
 
     @PostMapping
     public ResponseEntity<Map<String, Object>> createAnalysis(@RequestBody Analysis analysis) {
@@ -37,18 +31,21 @@ private LogService logService;
         response.put("status", HttpStatus.OK.value());
         response.put("message", "Analysis created successfully");
         response.put("data", savedAnalysis);
+        logService.logApiCall("Analysis created successfully with ID: " + savedAnalysis.getId());
         return ResponseEntity.ok(response);
     }
 
     @GetMapping
     public ResponseEntity<List<Analysis>> getAllAnalyses() {
         List<Analysis> analyses = analysisService.getAllAnalyses();
+        logService.logApiCall("Fetched all analyses");
         return ResponseEntity.ok(analyses);
     }
 
     @GetMapping("/{id}")
     public ResponseEntity<Analysis> getAnalysisById(@PathVariable int id) {
         Analysis analysis = analysisService.getAnalysisById(id);
+        logService.logApiCall("Fetched analysis with ID: " + id);
         return ResponseEntity.ok(analysis);
     }
 
@@ -61,29 +58,31 @@ private LogService logService;
             response.put("status", HttpStatus.OK.value());
             response.put("message", "Analysis updated successfully");
             response.put("data", updatedAnalysis);
+            logService.logApiCall("Updated analysis with ID: " + id);
             logUserAction("update", id);
         } catch (Exception e) {
-            logger.error("Error updating analysis with id {}: {}", id, e.getMessage());
+            logService.logError("Error updating analysis with ID: " + id + ", Error: " + e.getMessage());
+            logService.logException(e);
             response.put("status", HttpStatus.INTERNAL_SERVER_ERROR.value());
             response.put("message", "Error updating analysis");
         }
         return ResponseEntity.ok(response);
     }
 
-
     @PutMapping("/deactivate/{id}")
     public ResponseEntity<Map<String, Object>> deactivateAnalysis(@PathVariable int id) {
         Map<String, Object> response = new HashMap<>();
         try {
-            logger.info("Deactivating analysis with ID: {}", id);
+            logService.logApiCall("Deactivating analysis with ID: " + id);
             analysisService.deactivateAnalysis(id);
-            logger.info("Successfully deactivated analysis with ID: {}", id);
+            logService.logApiCall("Successfully deactivated analysis with ID: " + id);
 
             response.put("status", HttpStatus.OK.value());
             response.put("message", "Analysis deactivated successfully");
             logUserAction("deactivate", id);
         } catch (Exception e) {
-            logger.error("Error deactivating analysis with id {}: {}", id, e.getMessage());
+            logService.logError("Error deactivating analysis with ID: " + id + ", Error: " + e.getMessage());
+            logService.logException(e);
             response.put("status", HttpStatus.INTERNAL_SERVER_ERROR.value());
             response.put("message", "Error deactivating analysis: " + e.getMessage());
         }
@@ -93,6 +92,7 @@ private LogService logService;
     private void logUserAction(String action, int id) {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
         String username = (authentication != null) ? authentication.getName() : "Unknown User";
-        logger.info("User '{}' performed '{}' on analysis with id {}", username, action, id);
+        String logMessage = String.format("User '%s' performed '%s' on analysis with id %d", username, action, id);
+        logService.logApiCall(logMessage);
     }
 }

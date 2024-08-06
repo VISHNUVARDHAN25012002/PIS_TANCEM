@@ -1,11 +1,12 @@
 package com.Tancem.PIS.Exceptions;
 
-import jakarta.persistence.EntityNotFoundException;
+import com.Tancem.PIS.Service.logService.LogService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.servlet.resource.NoResourceFoundException;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -13,16 +14,25 @@ import java.util.Map;
 @ControllerAdvice
 public class GlobalExceptionHandler {
 
-    @ExceptionHandler(EntityNotFoundException.class)
-    public ResponseEntity<Map<String, Object>> handleEntityNotFound(EntityNotFoundException ex) {
+    @Autowired
+    private LogService logService;
+
+    @ExceptionHandler(NoResourceFoundException.class)
+    public ResponseEntity<Map<String, Object>> handleNoResourceFoundException(NoResourceFoundException ex) {
+        logService.logError("Resource not found: " + ex.getMessage());
+        logService.logException(ex);
+
         Map<String, Object> response = new HashMap<>();
         response.put("statusCode", HttpStatus.NOT_FOUND.value());
-        response.put("statusMessage", ex.getMessage());
+        response.put("statusMessage", "Resource not found");
         return new ResponseEntity<>(response, HttpStatus.NOT_FOUND);
     }
 
     @ExceptionHandler(Exception.class)
     public ResponseEntity<Map<String, Object>> handleAllOtherExceptions(Exception ex) {
+        logService.logError("An unexpected error occurred: " + ex.getMessage());
+        logService.logException(ex);
+
         Map<String, Object> response = new HashMap<>();
         response.put("statusCode", HttpStatus.INTERNAL_SERVER_ERROR.value());
         response.put("statusMessage", "An unexpected error occurred");
