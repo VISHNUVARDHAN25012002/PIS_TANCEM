@@ -51,7 +51,12 @@
 			<version>42.5.0</version> <!-- Use the latest version available -->
 			<scope>runtime</scope>
 		</dependency>
-
+<!--LOG-->
+		<dependency>
+			<groupId>net.logstash.logback</groupId>
+			<artifactId>logstash-logback-encoder</artifactId>
+			<version>7.0</version>
+		</dependency>
 
 		<dependency>
 			<groupId>org.projectlombok</groupId>

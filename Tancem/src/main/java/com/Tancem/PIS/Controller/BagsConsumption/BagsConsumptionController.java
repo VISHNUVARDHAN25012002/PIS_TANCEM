@@ -1,7 +1,6 @@
 package com.Tancem.PIS.Controller.BagsConsumption;
+
 import com.Tancem.PIS.Exceptions.ResourceNotFoundException;
-
-
 import com.Tancem.PIS.Model.BagsConsumption;
 import com.Tancem.PIS.Service.BagsConsumption.BagsConsumptionService;
 import com.Tancem.PIS.Service.logService.LogService;
@@ -9,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -16,11 +16,9 @@ import java.util.Map;
 @RestController
 @RequestMapping("tancem/pis/BagsConsumptionController")
 public class BagsConsumptionController {
-    //LOG
+
     @Autowired
     private LogService logService;
-
-
 
     @Autowired
     private BagsConsumptionService bagsConsumptionService;
@@ -32,6 +30,7 @@ public class BagsConsumptionController {
         response.put("status", HttpStatus.OK.value());
         response.put("message", "All bags retrieved successfully.");
         response.put("data", bags);
+        logService.logDbOperation("Fetched all bags");
         return new ResponseEntity<>(response, HttpStatus.OK);
     }
 
@@ -46,12 +45,12 @@ public class BagsConsumptionController {
         response.put("status", HttpStatus.OK.value());
         response.put("message", "Bag retrieved successfully.");
         response.put("data", bag);
+        logService.logDbOperation("Fetched bag with ID: " + id);
         return new ResponseEntity<>(response, HttpStatus.OK);
     }
 
     @PostMapping("/create")
-    public ResponseEntity<Map<String, Object>> createBag( @RequestBody BagsConsumption bag) {
-        // Check if ID already exists
+    public ResponseEntity<Map<String, Object>> createBag(@RequestBody BagsConsumption bag) {
         if (bagsConsumptionService.getBagById(bag.getId()) != null) {
             Map<String, Object> response = new HashMap<>();
             response.put("status", HttpStatus.BAD_REQUEST.value());
@@ -64,11 +63,12 @@ public class BagsConsumptionController {
         response.put("id", savedBag.getId());
         response.put("status", HttpStatus.CREATED.value());
         response.put("message", "Bag created successfully.");
+        logService.logDbOperation("Created bag with ID: " + savedBag.getId());
         return new ResponseEntity<>(response, HttpStatus.CREATED);
     }
 
     @PutMapping("/update/{id}")
-    public ResponseEntity<Map<String, Object>> updateBag(@PathVariable int id,  @RequestBody BagsConsumption bag) {
+    public ResponseEntity<Map<String, Object>> updateBag(@PathVariable int id, @RequestBody BagsConsumption bag) {
         BagsConsumption existingBag = bagsConsumptionService.getBagById(id);
         if (existingBag == null) {
             throw new ResourceNotFoundException("Bag not found with id: " + id);
@@ -80,6 +80,7 @@ public class BagsConsumptionController {
         response.put("id", id);
         response.put("status", HttpStatus.OK.value());
         response.put("message", "Bag updated successfully.");
+        logService.logDbOperation("Updated bag with ID: " + id);
         return new ResponseEntity<>(response, HttpStatus.OK);
     }
 
@@ -95,7 +96,7 @@ public class BagsConsumptionController {
         response.put("id", id);
         response.put("status", HttpStatus.OK.value());
         response.put("message", "Bag deleted successfully.");
+        logService.logDbOperation("Deleted bag with ID: " + id);
         return new ResponseEntity<>(response, HttpStatus.OK);
     }
-
 }

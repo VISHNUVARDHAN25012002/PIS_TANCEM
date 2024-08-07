@@ -17,16 +17,14 @@ import java.sql.Timestamp;
 @EntityListeners(AuditingEntityListener.class)
 public class BagsType {
     @Id
-//    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-
 
     private String types_Of_Bags;
 
     @CreatedDate
     @Column(name = "created_at", nullable = false, updatable = false)
     private Timestamp created_At;
-
 
     @LastModifiedDate
     @Column(name = "updated_at")

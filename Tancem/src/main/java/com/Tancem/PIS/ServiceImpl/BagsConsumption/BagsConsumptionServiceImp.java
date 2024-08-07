@@ -4,9 +4,8 @@ import com.Tancem.PIS.Exceptions.ResourceNotFoundException;
 import com.Tancem.PIS.Model.BagsConsumption;
 import com.Tancem.PIS.Repository.BagsConsumption.BagsConsumptionRepository;
 import com.Tancem.PIS.Service.BagsConsumption.BagsConsumptionService;
+import com.Tancem.PIS.Service.logService.LogService;
 import lombok.extern.slf4j.Slf4j;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -15,39 +14,37 @@ import java.util.List;
 @Service
 @Slf4j
 public class BagsConsumptionServiceImp implements BagsConsumptionService {
-    private static final Logger logger = LoggerFactory.getLogger(BagsConsumptionServiceImp.class);
-    //had to import it from Slf4j
-
 
     @Autowired
     private BagsConsumptionRepository bagsConsumptionRepository;
 
+    @Autowired
+    private LogService logService;
+
     @Override
     public List<BagsConsumption> getAllBags() {
-        logger.info("Fetching all bags.");
+        logService.logDbOperation("Fetching all bags.");
         return bagsConsumptionRepository.findAll();
     }
 
     @Override
     public BagsConsumption getBagById(int id) {
-        logger.info("Fetching bag with id: {}", id);
-//        return bagsConsumptionRepository.findById(id)
-//                .orElseThrow(() -> new ResourceNotFoundException("Bag not found with id: " + id));
-//
-         return bagsConsumptionRepository.findById(id).orElse(null); }
+        logService.logDbOperation("Fetching bag with ID: " + id);
+        return bagsConsumptionRepository.findById(id).orElse(null);
+    }
 
     @Override
     public BagsConsumption saveBag(BagsConsumption bag) {
-        logger.info("Saving new bag.");
-        bagsConsumptionRepository.save(bag);
-        return bag;
+        BagsConsumption savedBag = bagsConsumptionRepository.save(bag);
+        logService.logDbOperation("Saved bag with ID: " + savedBag.getId());
+        return savedBag;
     }
 
     @Override
     public BagsConsumption updateBag(int id, BagsConsumption bag) {
-        logger.info("Updating bag with id: {}", id);
+        logService.logDbOperation("Updating bag with ID: " + id);
         BagsConsumption existingBag = bagsConsumptionRepository.findById(id)
-                .orElseThrow(() -> new ResourceNotFoundException("Bag not found with id: " + id));
+                .orElseThrow(() -> new ResourceNotFoundException("Bag not found with ID: " + id));
 
         existingBag.setTransaction_Date(bag.getTransaction_Date());
         existingBag.setOpc_Bags(bag.getOpc_Bags());
@@ -61,18 +58,18 @@ public class BagsConsumptionServiceImp implements BagsConsumptionService {
         existingBag.setTransfer_To_Other_Plants(bag.getTransfer_To_Other_Plants());
         existingBag.setBagsType(bag.getBagsType());
 
-        bagsConsumptionRepository.save(existingBag);
-        return existingBag;
+        BagsConsumption updatedBag = bagsConsumptionRepository.save(existingBag);
+        logService.logDbOperation("Updated bag with ID: " + updatedBag.getId());
+        return updatedBag;
     }
 
     @Override
     public boolean deleteBag(int id) {
-        logger.info("Deleting bag with id: {}", id);
+        logService.logDbOperation("Deleting bag with ID: " + id);
         BagsConsumption existingBag = bagsConsumptionRepository.findById(id)
-                .orElseThrow(() -> new ResourceNotFoundException("Bag not found with id: " + id));
+                .orElseThrow(() -> new ResourceNotFoundException("Bag not found with ID: " + id));
         bagsConsumptionRepository.delete(existingBag);
-        return false;
+        logService.logDbOperation("Deleted bag with ID: " + id);
+        return true;
     }
-
-
 }

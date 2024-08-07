@@ -2,3 +2,11 @@
 2024-08-06 18:33:44 - Error: Resource not found: No static resource api/analysi/2.
 2024-08-06 18:34:15 - Error: An unexpected error occurred: Request method 'POST' is not supported
 2024-08-06 18:37:04 - Error: Resource not found: No static resource api/anal.
+2024-08-06 18:43:35 - Error: Resource not found: No static resource api/lab-analysi.
+2024-08-06 18:51:04 - Error: An unexpected error occurred: Request method 'GET' is not supported
+2024-08-06 18:51:40 - Error: An unexpected error occurred: JSON parse error: Cannot construct instance of `com.Tancem.PIS.Model.BagsType` (although at least one Creator exists): no String-argument constructor/factory method to deserialize from String value ('TypeA')
+2024-08-06 19:03:42 - Error: An unexpected error occurred: not-null property references a null or transient value : com.Tancem.PIS.Model.BagsConsumption.bagsType
+2024-08-06 19:10:08 - Error: An unexpected error occurred: Unable to find com.Tancem.PIS.Model.BagsType with id 1
+2024-08-06 19:10:48 - Error: An unexpected error occurred: org.hibernate.TransientPropertyValueException: Not-null property references a transient value - transient instance must be saved before current operation : com.Tancem.PIS.Model.BagsConsumption.bagsType -> com.Tancem.PIS.Model.BagsType
+2024-08-06 19:11:00 - Error: An unexpected error occurred: not-null property references a null or transient value : com.Tancem.PIS.Model.BagsConsumption.bagsType
+2024-08-06 19:21:59 - Error: An unexpected error occurred: not-null property references a null or transient value : com.Tancem.PIS.Model.BagsConsumption.bagsType
